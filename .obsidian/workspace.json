@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "fb9af585deae860f",
+    "type": "split",
+    "children": [
+      {
+        "id": "173f6780b46c62fb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7e4f127e84a1628f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "a7189606d9a63de4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Processus/Poisson.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "68f0e822cd3e351a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spot price simulation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "71f972d47dcb41a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calibration.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "64ea3edf66f7c14b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Option pricing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c542af8b3f16d095",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Option pricing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "494e5aba7c5d57e7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Processus/Poisson.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e5cc06cda5ef40ab",
+    "type": "split",
+    "children": [
+      {
+        "id": "a4f0332ea81a6229",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f1ebcf96697bfafb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "645ffab9937535da",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e785d8507577cfbc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "1d5a0e5d018841d8",
+    "type": "split",
+    "children": [
+      {
+        "id": "e6cfcbf291a86ba6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d99a5596a8bc4ed6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Option pricing.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "34f370e6c61d86f6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Option pricing.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "de1835bd1363f4ad",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "dba53c18294d2a0b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Option pricing.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "daily-notes:Open today's daily note": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "c542af8b3f16d095",
+  "lastOpenFiles": [
+    "2023-12-27.md",
+    "Option pricing.md",
+    "Option pricing/European/Black & Scholes.md",
+    "Untitled",
+    "Option pricing/European",
+    "Spot price simulation.md",
+    "Option pricing",
+    "Processus/Poisson.md",
+    "Calibration.md",
+    "Processus/Brownian motion.md",
+    "Processus/Countdown poisson process.md",
+    "2023-12-24.md",
+    "Processus",
+    "2023-12-23.md",
+    "Type.md",
+    "Test2.md"
+  ]
+}
