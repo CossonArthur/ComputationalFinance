@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spot price simulation.md",
+                "file": "Poisson.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spot price simulation.md",
+                "file": "Poisson.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spot price simulation.md"
+                "file": "Poisson.md"
               }
             }
           }
@@ -180,7 +180,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dba53c18294d2a0b",
+  "active": "c542af8b3f16d095",
   "lastOpenFiles": [
     "Spot price simulation.md",
     "Utils.md",
