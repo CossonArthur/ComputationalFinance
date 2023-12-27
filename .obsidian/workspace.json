@@ -13,20 +13,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Poisson.md",
+                "file": "Utils.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "0cdf5fea63741dfb",
-            "type": "leaf",
-            "state": {
-              "type": "diff-view",
-              "state": {
-                "file": "Poisson.md",
-                "staged": true
               }
             }
           },
@@ -108,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Poisson.md",
+                "file": "Utils.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Poisson.md",
+                "file": "Utils.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Poisson.md"
+                "file": "Utils.md"
               }
             }
           },
@@ -173,7 +162,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "68f0e822cd3e351a",
+  "active": "f1ebcf96697bfafb",
   "lastOpenFiles": [
     "Spot price simulation.md",
     "Poisson.md",

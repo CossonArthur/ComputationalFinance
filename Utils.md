@@ -7,6 +7,32 @@ $B_t$ is a Brownian process  : $B_{t} \sim N(0, \sqrt(t))$
 >  Bt =  sqrt(t)*randn
 >```
 
+# Jumps
+
+To simulate the jumps, a poisson distribution is use
+
+>[!notes]- Code
+>``` matlab
+>lambda = 1; T = 1;
+>
+>Nt = icdf('Poisson',rand(1,1),lambda*t); % distribution, size, params
+>jumps = sort(rand(1,Nt))*T
+>
+>```
+
+>[!notes]- Code without using Poisson distribution function
+>``` matlab
+>lambda = 1; T = 2;
+>tmp = icdf('Exp', rand, 1/lambda);
+>while sum(tmp) <= T
+>	tmp = [tmp icdf('Exp', rand, 1/lambda)];
+>end
+>
+>Nt = length(tmp)-1;
+>jumps = cumsum(tmp(1:end-1));
+>
+>```
+
 
 # SDE
 ## Arithmetic Brownian Motion
