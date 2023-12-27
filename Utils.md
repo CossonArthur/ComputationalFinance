@@ -9,7 +9,6 @@ $B_t$ is a Brownian process  : $B_{t} \sim N(0, \sqrt(t))$
 
 # Jumps
 
-To simulate the jumps, a poisson distribution is use
 
 >[!notes]- Code
 >``` matlab
