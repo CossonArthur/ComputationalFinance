@@ -4,7 +4,7 @@ The Poisson Process is a mathematical model that describes the occurrence of rar
 
 ## Poisson Process Definition
 
-A stochastic process \(N(t)\) is a Poisson Process with rate parameter \(\lambda\) if, for any $(t \geq 0)$, the following conditions hold:
+A stochastic process \(N(t)\) is a Poisson Process with rate parameter $\lambda$ if, for any $(t \geq 0)$, the following conditions hold:
 
 1. **Independence:** The number of events in non-overlapping intervals is independent.
    
@@ -19,16 +19,30 @@ The probability mass function (PMF) of a Poisson-distributed random variable \(X
 $$ P(X = k) = \frac{e^{-\lambda t} (\lambda t)^k}{k!} $$
 
 Where:
-- \( k \) is the number of events.
-- \( \lambda \) is the average rate of events per unit time.
-- \( t \) is the length of the interval.
+- \k is the number of events.
+- $\lambda$  is the average rate of events per unit time.
+- t is the length of the interval.
 
-## Poisson Process Intensity Function
+## Simulation 
 
-The intensity function, denoted by \( \lambda(t) \), represents the rate of event occurrences at time \( t \). In a homogeneous Poisson Process, \( \lambda(t) \) is a constant:
+``` matlab
+lambda = 1; T = 1;
 
-\[ \lambda(t) = \lambda \]
+Nt = icdf('Poisson',rand(1,1),lambda*t); % distribution, size, params
+jumps = sort(rand(1,Nt))*T
 
-In a non-homogeneous Poisson Process, \( \lambda(t) \) can vary over time, providing a more flexible model for real-world scenarios.
+```
 
-The Poisson Process serves as a fundamental tool for modeling rare and random events, offering a simple yet powerful framework for probability and statistics.
+
+Without using Poisson distribution function in Matlab
+``` matlab
+lambda = 1; T = 2;
+
+tmp = icdf('Exp', rand, 1/lambda);
+while sum(tmp) <= T
+	tmp = [tmp icdf('Exp', rand, 1/lambda)];
+end
+
+Nt = length(tmp)-1;
+jumps = cumsum(tmp(1:end-1));
+```

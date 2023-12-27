@@ -8,26 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7e4f127e84a1628f",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "a7189606d9a63de4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Processus/Poisson.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "68f0e822cd3e351a",
             "type": "leaf",
             "state": {
@@ -40,36 +20,24 @@
             }
           },
           {
-            "id": "71f972d47dcb41a1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Calibration.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "64ea3edf66f7c14b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Option pricing.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "c542af8b3f16d095",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Option pricing.md",
+                "file": "Poisson.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0cdf5fea63741dfb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spot price simulation.md",
                 "mode": "source",
                 "source": false
               }
@@ -81,14 +49,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Processus/Poisson.md",
-                "mode": "preview",
+                "file": "Spot price simulation.md",
+                "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -154,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Option pricing.md",
+                "file": "Poisson.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -171,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Option pricing.md",
+                "file": "Poisson.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -194,11 +162,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Option pricing.md"
+                "file": "Poisson.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -211,19 +180,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c542af8b3f16d095",
+  "active": "dba53c18294d2a0b",
   "lastOpenFiles": [
-    "2023-12-27.md",
+    "Spot price simulation.md",
+    "Utils.md",
     "Option pricing.md",
+    "Poisson.md",
+    "Processus/Countdown poisson process.md",
+    "Processus/Brownian motion.md",
+    "Calibration.md",
+    "Option pricing/European/Carr-Madan.md",
+    "2023-12-27.md",
     "Option pricing/European/Black & Scholes.md",
     "Untitled",
     "Option pricing/European",
-    "Spot price simulation.md",
     "Option pricing",
-    "Processus/Poisson.md",
-    "Calibration.md",
-    "Processus/Brownian motion.md",
-    "Processus/Countdown poisson process.md",
     "2023-12-24.md",
     "Processus",
     "2023-12-23.md",
