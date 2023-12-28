@@ -29,10 +29,11 @@ Let $X_t \in R^d$​ be a Lévy process ($\gamma$, A,$\nu$), $M\in R^{n\cdot d}$
 $$ 
 \begin{align*}
 Y_t &=  M * X_t \\
-\text{where,}\\
-&\tilde{A} = MAM^T\\
-&\tilde{\nu}(B) = \nu(\{x| Mx\in B \}) \\
-&\tilde{\gamma} = Mγ + \int_{R^n} y(1_{|y|≤1}(y) − 1_{S_1} (y))νY (dy), \quad S_1 = \{  Mx| |x|\leq 1\}
+\text{with,}\\
+\tilde{A} &= MAM^T\\
+\tilde{\nu}(B) &= \nu(\{x| Mx\in B \}) \\
+\tilde{\gamma} &= Mγ + \int_{R^n} y(1_{|y|≤1}(y) − 1_{S_1} (y)) \cdot \tilde{\nu}(dy)\\
+&\text{--> }S_1 = \{  Mx| |x|\leq 1\}
 \end{align*}
 $$
 
