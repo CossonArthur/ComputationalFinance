@@ -22,6 +22,10 @@ S_t = e^{\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma B_t}
 $$
 
 # Stochastic process
+Let $X_t$ be a Lévy process ($\gamma$, A, $\nu$),
+$$
+E[e{iz}]
+$$
 
 To create new Levy process there is three methods 
 ## Linear transformation
