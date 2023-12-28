@@ -8,6 +8,9 @@ Y_i &\sim N(\mu_2, \delta) \\
 N(t) &\sim Poisson(\lambda*t)\\
 \end{align*}
 $$
+$$
+\Psi(u) = -\frac{\sigma^2 u^2}{2} + \lambda \left(\exp\left(-\frac{\sigma_J^2 u^2}{2} + i\mu_J u\right) - 1\right)
+$$
 
 
 >[!notes]- Code
