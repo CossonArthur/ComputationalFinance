@@ -1,4 +1,10 @@
-# Brownian Motion
+# Probabilité
+
+**Characteristic function :** Define a probability law, is equal to the Fourier transformation of the probability density function
+
+# Stochastic process
+
+## Brownian Motion
 
 $B_t$ is a Brownian process  : $B_{t} \sim N(0, \sqrt{t})$
 
@@ -7,7 +13,7 @@ $B_t$ is a Brownian process  : $B_{t} \sim N(0, \sqrt{t})$
 >  Bt =  sqrt(t)*randn
 >```
 
-# Jumps
+## Jumps
 
 
 >[!notes]- Code
