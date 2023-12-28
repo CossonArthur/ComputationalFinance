@@ -39,9 +39,7 @@ $$
 
 
 ## Subordinator
-**Lévy subordinator ** :
-
-Let $X_t$​ be a Lévy process  ($\gamma$, A,$\nu$), and let $S_t$ be a non-decreasing Lévy subordinator. The subordinated Lévy process $Y_t$ is defined as:
+Let $X_t$​ be a Lévy process  ($\gamma$, A,$\nu$), and let $S_t$ be a non-decreasing Lévy subordinator (0,$\rho$,$b$). The subordinated Lévy process $Y_t$ is defined as:
 $$ 
 \begin{align*}
 Y_t &= X_{S_t} \\
@@ -53,7 +51,7 @@ Y_t &= X_{S_t} \\
 $$
 
 The characteristic function of the subordinated Lévy process $Y_t$ can be expressed as the product of the characteristic function of the original Lévy process $X_t$ and the characteristic function of the Lévy subordinator $S_t$:
-$$\Phi_{Y_t}(u) = \Phi_{X_t}(\Phi_{S_t}(u))$$
+$$E[euSt] = e^{t l(u)} \text{ , }\forall u ≤ 0 \quad \text{, where } l(u) = bu + \int_0^{\infty}(eux − 1)\rho(dx).$$
 
 *More at the theorem 4.2 book*
 
