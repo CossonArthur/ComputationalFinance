@@ -58,6 +58,11 @@ Y_t &= X_{S_t} \\
 \end{align*}
 $$
 
+## Tilting & Tempering
+By modifying the Lévy measure, we create a new Lévy process. A common way, is to multply by an exponential constant:
+$$
+\nu(B) = e^{}
+$$
 
 
 ## Utils

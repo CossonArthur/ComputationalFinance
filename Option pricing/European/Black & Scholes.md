@@ -1,4 +1,3 @@
-
 Hypothesis : 
 - No dividend paid
 - No transaction cost
