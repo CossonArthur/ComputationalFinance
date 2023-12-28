@@ -2,10 +2,19 @@ To solve the SDE, $dX_t=a(X_t,t) \cdot dt+b(X_t,t) \cdot dW_t$
 
 # Euler
 ## Explicit
-
+$$
+X_{n+1} = X_n + dX_{n}
+$$
 ## Implicit
 
+$$
+X_{n+1} = X_n + dX_{n+1}
+$$
 # Theta
+Theta method is a generalisation
+$$
+X_{n+1} = X_n + dX_{n+1}
+$$
 
 # Milstein
 $$
