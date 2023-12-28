@@ -1,4 +1,4 @@
-# Probabilité
+# Probability
 
 **Characteristic function :** Define a random variable, is equal to the Fourier transformation of the probability density function
 
@@ -6,15 +6,20 @@
 $$ 
 P(X = k) = e^{-\lambda} \frac{\lambda^k}{k!}
 $$
+Proprieties :
 - $X, Y \sim P(\lambda), P(\mu) => X+Y \sim P(\lambda + \mu)$ 
-
 
 ## Ito's Lemma
 Suppose $X_t$ is an [Itô drift-diffusion process](https://www.wikiwand.com/en/Itô_calculus#Itô_processes "Itô calculus") that satisfies the stochastic differential equation $dX_t = \mu dt + \sigma dB_t$ where $B_t$ is a [Wiener process](https://www.wikiwand.com/en/Wiener_process "Wiener process").
 
-If $f(t,x)$ is a smooth function, then the process $Y_t=f(t,X_t$ follows the stochastic differential equation:
-
-
+If $f(t,x)$ is a smooth function, then the process $Y_t=f(t,X_t)$ follows the stochastic differential equation:
+$$
+dY(t) = \left( \frac{\partial f}{\partial t} + \mu \frac{\partial f}{\partial x} + \frac{1}{2} \sigma^2 \frac{\partial^2 f}{\partial x^2} \right) dt + \sigma \frac{\partial f}{\partial x} dW(t)
+$$
+For the GBM: $f(S_t) = \log(S_t/S_0)$
+$$
+S(t) = S(0) e^{\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma B_t}
+$$
 
 # Stochastic process
 
