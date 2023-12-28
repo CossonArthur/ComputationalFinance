@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "fd426fb817fea871",
+        "id": "70da54ae2e30d049",
         "type": "tabs",
         "children": [
           {
-            "id": "155161306b981c6f",
+            "id": "9515990184a7c0bf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Option pricing.md",
+                "file": "Option.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Option pricing.md",
+            "file": "Option.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Option pricing.md",
+            "file": "Option.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -114,12 +114,12 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Option pricing.md"
+            "file": "Option.md"
           }
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 2
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -127,7 +127,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "155161306b981c6f",
+  "active": "9515990184a7c0bf",
   "lastOpenFiles": [
     "Calibration.md"
   ]
