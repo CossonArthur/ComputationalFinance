@@ -59,11 +59,20 @@ Y_t &= X_{S_t} \\
 $$
 
 ## Tilting & Tempering
-By modifying the Lévy measure, we create a new Lévy process. A common way, is to multply by an exponential constant:
+By modifying the Lévy measure, we create a new Lévy process. A common way, is to multiply by an exponential constant. If there exists $\theta \in R^d$ such that $\int_{|x|≥1} e^{\theta x} \nu(dx) < \infty$ then the measure $\tilde{\nu}$ defined by
+
 $$
-\nu(B) = e^{}
+\tilde{\nu}(dx) = e^{\theta dx} \nu(dx)
+$$
+This is called *exponential tilting*
+
+In 1 dimension (d=1), 
+$$
+\tilde{\nu}(dx) = \nu(dx) (1_{x>0} e^{−\lambda_+x} + 1_{x<0}e^{−\lambda_−|x|})
 $$
 
+$\lambda_+$ and $\lambda_-$ are positive parameters, is also a Lévy measure and defines
+a Lévy process whose large jumps are “tempered”
 
 ## Utils
 ## Brownian Motion
