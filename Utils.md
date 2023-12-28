@@ -23,6 +23,8 @@ $$
 
 # Stochastic process
 
+To create new Levy process there is 
+
 ## Subordinator
 Allow to create complex stochastic process
 
