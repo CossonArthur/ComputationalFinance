@@ -148,8 +148,17 @@ $$
 $S_t = S_0 e^{X_t}$, with $X_t$ a Lévy process
 
 ## B&S
-$W_t
+$W_t$ is a Weiner process
 $dX_t = \mu dt + \sigma dW_t$ 
 
 ## Jump - Diffusion
+$W_t$ is a Weiner process, $N(t) \sim P(\lambda)$, $Y_i$ i.i.d
 $dX_t = \mu dt + \sigma dW_t + \sum_{i=1}^{N(t)} Y_i$ 
+
+Two main modelisations are **Merton** and **Kou**
+
+## Infinite Activity
+Subordination t -> $\tilde S_t$ 
+$dX_t = \mu d\tilde S_t + \sigma dW_{\tilde S_t}$
+
+Two main modelisations are **VG** and **NIG**
