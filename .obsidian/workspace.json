@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SDE solver.md",
+                "file": "Option.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SDE solver.md",
+                "file": "Option.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SDE solver.md",
+                "file": "Option.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SDE solver.md"
+                "file": "Option.md"
               }
             }
           },
@@ -165,8 +165,8 @@
   },
   "active": "68f0e822cd3e351a",
   "lastOpenFiles": [
-    "Option pricing.md",
     "SDE solver.md",
+    "Option.md",
     "Spot price simulation.md",
     "Utils.md",
     "Processus/Countdown poisson process.md",
