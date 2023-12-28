@@ -10,7 +10,10 @@ $$
 
 
 ## Ito's Lemma
-Suppose _X__t_ is an [Itô drift-diffusion process](https://www.wikiwand.com/en/Itô_calculus#Itô_processes "Itô calculus") that satisfies the stochastic differential equation $dX_t = \mu dt + \sigma dW_t$ where $B_t$ is a [Wiener process](https://www.wikiwand.com/en/Wiener_process "Wiener process").
+Suppose $X_t$ is an [Itô drift-diffusion process](https://www.wikiwand.com/en/Itô_calculus#Itô_processes "Itô calculus") that satisfies the stochastic differential equation $dX_t = \mu dt + \sigma dB_t$ where $B_t$ is a [Wiener process](https://www.wikiwand.com/en/Wiener_process "Wiener process").
+
+If $f(t,x)$ is a smooth function, then the process $Y_t=f(t,X_t$ follows the stochastic differential equation:
+
 
 
 # Stochastic process
