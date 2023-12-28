@@ -23,7 +23,11 @@ $$
 
 # Stochastic process
 
-To create new Levy process there is 
+To create new Levy process there is three methods 
+## Linear transformation
+Let $X_t \in R^d$​ be a Lévy process, $A\in R^{n\cdot d}$ then $Y_t \in R^n$ is a Lévy process defined as:
+$$ Y_t =  A * X_t$$
+
 
 ## Subordinator
 Allow to create complex stochastic process
