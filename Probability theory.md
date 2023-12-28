@@ -22,11 +22,14 @@ S_t = e^{\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma B_t}
 $$
 
 # Stochastic process
-Let $X_t$ be a Lévy process ($\gamma$, A, $\nu$),
+Let $X_t$ be a Lévy process ($\gamma$, A, $\nu$) on $R^d$,
 $$
-E[e{iz}]
+\Phi_{X_t}(z) = E[e^{iz\cdot X_t}] = e^{t \cdot \Psi(z)}, \quad \forall z \in R^d
 $$
-
+$\Psi$ is called the characteristic exponent 
+$$
+\Psi(z) = i\gamma\cdot z - \frac{1}{2}z^TAz+ \int_{R^d} (e^{iz\cdot x} -1-iz \cdot x 1_{|x|\leq 1})\nu(dx)
+$$
 To create new Levy process there is three methods 
 ## Linear transformation
 Let $X_t \in R^d$​ be a Lévy process ($\gamma$, A,$\nu$), $M\in R^{n\cdot d}$ then $Y_t \in R^n$ is a Lévy process with  ($\tilde{\gamma}$, $\tilde{A}$,$\tilde{\nu}$) defined as:
