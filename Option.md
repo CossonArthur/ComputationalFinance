@@ -41,4 +41,18 @@ A basket option is a type of financial derivative that provides the holder with 
 
 ## Pricing
 
-# 
+# Barrier
+## Definition
+A barrier option is a type of financial derivative with a feature known as a barrier, which, when crossed, can alter the option's characteristics. Barrier options can be either knock-in or knock-out, depending on whether the barrier activates or deactivates the option.
+- **Barrier Types:**
+    - **Knock-In:** In a knock-in barrier option, the option becomes active (starts to exist) only if the underlying asset's price reaches or crosses a specified barrier level during the option's life.
+    - **Knock-Out:** In a knock-out barrier option, the option becomes null and void if the underlying asset's price reaches or crosses a predetermined barrier level during the option's life.
+- **Down-and-In, Up-and-In, Down-and-Out, Up-and-Out:**
+    - **Down-and-In (DI):** The option becomes active if the price falls below the barrier.
+    - **Up-and-In (UI):** The option becomes active if the price rises above the barrier.
+    - **Down-and-Out (DO):** The option becomes null and void if the price falls below the barrier.
+    - **Up-and-Out (UO):** The option becomes null and void if the price rises above the barrier.
+- **Risk Management:** Barrier options are often used for risk management, allowing investors to tailor their exposure to specific price movements and market conditions.
+- **Complexity and Customization:** Barrier options can add complexity to derivative contracts due to the dynamic nature of their activation or deactivation based on barrier levels. However, this complexity also provides opportunities for customization.
+
+## Pricing

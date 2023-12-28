@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spot price simulation.md",
+                "file": "Option.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spot price simulation.md",
+                "file": "Option.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spot price simulation.md",
+                "file": "Option.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spot price simulation.md"
+                "file": "Option.md"
               }
             }
           },
@@ -142,7 +142,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 328.5
+    "width": 328.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -152,9 +153,9 @@
   },
   "active": "494e5aba7c5d57e7",
   "lastOpenFiles": [
+    "Spot price simulation.md",
     "Utils.md",
     "SDE solver.md",
-    "Spot price simulation.md",
     "Calibration.md",
     "Option pricing/European/Carr-Madan.md",
     "Option.md",
