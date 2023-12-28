@@ -154,7 +154,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 328.5
+    "width": 328.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -164,9 +165,9 @@
   },
   "active": "68f0e822cd3e351a",
   "lastOpenFiles": [
+    "Spot price simulation.md",
     "Option pricing.md",
     "Utils.md",
-    "Spot price simulation.md",
     "SDE solver.md",
     "Processus/Countdown poisson process.md",
     "Processus/Brownian motion.md",
