@@ -141,3 +141,15 @@ dS(t) &= \sqrt{v(t)} S(t) dW_1(t) \\
 dv(t) &= \kappa (\theta - v(t)) dt + \sigma \sqrt{v(t)} dW_2(t)
 \end{aligned}
 $$
+
+
+
+# Models 
+$S_t = S_0 e^{X_t}$, with $X_t$ a Lévy process
+
+## B&S
+$W_t
+$dX_t = \mu dt + \sigma dW_t$ 
+
+## Jump - Diffusion
+$dX_t = \mu dt + \sigma dW_t + \sum_{i=1}^{N(t)} Y_i$ 
