@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "173f6780b46c62fb",
+        "id": "e61e6fafeb87183b",
         "type": "tabs",
         "children": [
           {
-            "id": "494e5aba7c5d57e7",
+            "id": "4ff30029f3850c86",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Utils.md",
+                "file": "Spot price simulation.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Utils.md",
+                "file": "Spot price simulation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Utils.md",
+                "file": "Spot price simulation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Utils.md"
+                "file": "Spot price simulation.md"
               }
             }
           },
@@ -151,10 +151,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "494e5aba7c5d57e7",
+  "active": "4ff30029f3850c86",
   "lastOpenFiles": [
-    "SDE solver.md",
     "Utils.md",
+    "SDE solver.md",
     "Option.md",
     "Spot price simulation.md",
     "Calibration.md",
