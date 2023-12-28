@@ -25,8 +25,17 @@ $$
 
 To create new Levy process there is three methods 
 ## Linear transformation
-Let $X_t \in R^d$​ be a Lévy process, $A\in R^{n\cdot d}$ then $Y_t \in R^n$ is a Lévy process defined as:
-$$ Y_t =  A * X_t$$
+Let $X_t \in R^d$​ be a Lévy process ($\gamma$, A,$\nu$), $M\in R^{n\cdot d}$ then $Y_t \in R^n$ is a Lévy process with  ($\tilde{\gamma}$, $\tilde{A}$,$\tilde{\nu}$) defined as:
+$$ 
+\begin{align*}
+Y_t &=  M * X_t \\
+\text{where,}\\
+&\tilde{\gamma} = \textit{look at page 118 of book}\\
+&\tilde{A} = MAM^T\\
+&\tilde{\nu}(B) &= \nu(\{x| Mx\in B \})
+\end{align*}
+$$
+
 
 
 ## Subordinator
@@ -40,6 +49,9 @@ $$\Phi_{Y_t}(u) = \Phi_{X_t}(\Phi_{L_t}(u))$$
 
 *More at the theorem 4.2 book*
 
+
+
+## Utils
 ## Brownian Motion
 
 $B_t$ is a Brownian process  : $B_{t} \sim N(0, \sqrt{t})$
