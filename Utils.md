@@ -27,6 +27,12 @@ $$
 Allow to create complex stochastic process
 
 Let $X_t$​ be a Lévy process, and let $L_t$ be a non-decreasing Lévy subordinator. The subordinated Lévy process $Y_t$ is defined as:
+$$ Y_t = X_{L_t}$$
+
+The characteristic function of the subordinated Lévy process $Y_t$ can be expressed as the product of the characteristic function of the original Lévy process $X_t$ and the characteristic function of the Lévy subordinator $L_t$:
+$$\Phi_{Y_t}(u) = \Phi_{X_t}(\Phi_{L_t}(u))$$
+
+*More at the theorem 4.2 book*
 
 ## Brownian Motion
 
