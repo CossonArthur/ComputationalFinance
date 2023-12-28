@@ -4,7 +4,7 @@ $$
 \begin{align*}
 dX_t &= \mu_1 X_tdt + \sigma X_tdW_t + \sum^{N(t)}_{i=1} Yi \\
 \text{where,}\\
-Y_i &\sim N(\mu_J, \sigma_J) \\
+Y_i &\sim N(\mu_J, \sigma_J^2) \\
 N(t) &\sim Poisson(\lambda*t)\\
 \end{align*}
 $$
