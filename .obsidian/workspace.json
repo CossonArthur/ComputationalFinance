@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Probability theory.md",
+                "file": "SDE solver.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Probability theory.md",
+                "file": "SDE solver.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Probability theory.md",
+                "file": "SDE solver.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Probability theory.md"
+                "file": "SDE solver.md"
               }
             }
           },
@@ -151,11 +151,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f1ebcf96697bfafb",
+  "active": "4ff30029f3850c86",
   "lastOpenFiles": [
+    "Probability theory.md",
     "Option pricing/European/Black & Scholes.md",
     "Option pricing/European/Carr-Madan.md",
-    "Probability theory.md",
     "Option.md",
     "SDE solver.md",
     "Spot price simulation.md",
