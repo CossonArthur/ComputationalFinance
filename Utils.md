@@ -1,6 +1,6 @@
 # Brownian Motion
 
-$B_t$ is a Brownian process  : $B_{t} \sim N(0, \sqrt(t))$
+$B_t$ is a Brownian process  : $B_{t} \sim N(0, \sqrt{t})$
 
 >[!notes]- Code
 >```matlab

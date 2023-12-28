@@ -1,5 +1,7 @@
 To solve the SDE, $dX_t=a(X_t,t) \cdot dt+b(X_t,t) \cdot dW_t$ 
 
+For all the schema, $dW_t$ when discretise is $\sqrt{\Delta t} . N(0,1)$
+
 # Euler
 ## Explicit
 $$
