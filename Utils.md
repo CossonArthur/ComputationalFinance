@@ -30,9 +30,9 @@ $$
 \begin{align*}
 Y_t &=  M * X_t \\
 \text{where,}\\
-&\tilde{\gamma} = \textit{look at page 118 of book}\\
+&\tilde{\gamma} = \textit{---> look at page 118 of book}\\
 &\tilde{A} = MAM^T\\
-&\tilde{\nu}(B) &= \nu(\{x| Mx\in B \})
+&\tilde{\nu}(B) = \nu(\{x| Mx\in B \})
 \end{align*}
 $$
 
