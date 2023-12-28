@@ -23,6 +23,11 @@ $$
 
 # Stochastic process
 
+## Subordinator
+Allow to create complex stochastic process
+
+Let $X_t$​ be a Lévy process, and let $L_t$ be a non-decreasing Lévy subordinator. The subordinated Lévy process $Y_t$ is defined as:
+
 ## Brownian Motion
 
 $B_t$ is a Brownian process  : $B_{t} \sim N(0, \sqrt{t})$
