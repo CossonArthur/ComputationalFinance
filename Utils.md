@@ -39,13 +39,21 @@ $$
 
 
 ## Subordinator
-Allow to create complex stochastic process
+**Lévy subordinator ** :
 
-Let $X_t$​ be a Lévy process, and let $L_t$ be a non-decreasing Lévy subordinator. The subordinated Lévy process $Y_t$ is defined as:
-$$ Y_t = X_{L_t}$$
+Let $X_t$​ be a Lévy process  ($\gamma$, A,$\nu$), and let $S_t$ be a non-decreasing Lévy subordinator. The subordinated Lévy process $Y_t$ is defined as:
+$$ 
+\begin{align*}
+Y_t &= X_{S_t} \\
+\text{where,}\\
+&\tilde{\gamma} = \textit{---> look at page 118 of book}\\
+&\tilde{A} = MAM^T\\
+&\tilde{\nu}(B) = \nu(\{x| Mx\in B \})
+\end{align*}
+$$
 
-The characteristic function of the subordinated Lévy process $Y_t$ can be expressed as the product of the characteristic function of the original Lévy process $X_t$ and the characteristic function of the Lévy subordinator $L_t$:
-$$\Phi_{Y_t}(u) = \Phi_{X_t}(\Phi_{L_t}(u))$$
+The characteristic function of the subordinated Lévy process $Y_t$ can be expressed as the product of the characteristic function of the original Lévy process $X_t$ and the characteristic function of the Lévy subordinator $S_t$:
+$$\Phi_{Y_t}(u) = \Phi_{X_t}(\Phi_{S_t}(u))$$
 
 *More at the theorem 4.2 book*
 
