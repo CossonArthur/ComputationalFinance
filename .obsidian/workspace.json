@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Option.md",
+                "file": "Spot price simulation.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Option.md",
+                "file": "Spot price simulation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Option.md",
+                "file": "Spot price simulation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Option.md"
+                "file": "Spot price simulation.md"
               }
             }
           },
@@ -165,14 +165,14 @@
   },
   "active": "68f0e822cd3e351a",
   "lastOpenFiles": [
-    "SDE solver.md",
+    "Calibration.md",
+    "Option pricing/European/Carr-Madan.md",
     "Option.md",
+    "SDE solver.md",
     "Spot price simulation.md",
     "Utils.md",
     "Processus/Countdown poisson process.md",
     "Processus/Brownian motion.md",
-    "Calibration.md",
-    "Option pricing/European/Carr-Madan.md",
     "2023-12-27.md",
     "Option pricing/European/Black & Scholes.md",
     "Untitled",
