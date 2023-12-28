@@ -1,6 +1,17 @@
 # Probabilité
 
-**Characteristic function :** Define a probability law, is equal to the Fourier transformation of the probability density function
+**Characteristic function :** Define a random variable, is equal to the Fourier transformation of the probability density function
+
+## Poisson
+$$ 
+P(X = k) = e^{-\lambda} \frac{\lambda^k}{k!}
+$$
+- $X, Y \sim P(\lambda), P(\mu) => X+Y \sim P(\lambda + \mu)$ 
+
+
+## Ito's Lemma
+Suppose _X__t_ is an [Itô drift-diffusion process](https://www.wikiwand.com/en/Itô_calculus#Itô_processes "Itô calculus") that satisfies the stochastic differential equation $dX_t = \mu dt + \sigma dW_t$ where $B_t$ is a [Wiener process](https://www.wikiwand.com/en/Wiener_process "Wiener process").
+
 
 # Stochastic process
 
@@ -42,7 +53,7 @@ $B_t$ is a Brownian process  : $B_{t} \sim N(0, \sqrt{t})$
 # SDE
 ## Arithmetic Brownian Motion
 
-$$ dX_t = μdt + σdW_t $$
+$$ dX_t = \mu dt + \sigma dW_t $$
 ## Geometric Brownian Motion
 
 $$ dX_t = \mu X_tdt + \sigma X_tdW_t $$
