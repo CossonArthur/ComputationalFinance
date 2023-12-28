@@ -18,7 +18,7 @@ dY(t) = \left( \frac{\partial f}{\partial t} + \mu \frac{\partial f}{\partial x}
 $$
 For the GBM: $f(S_t) = \log(S_t/S_0)$
 $$
-S(t) = S(0) e^{\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma B_t}
+S_t = e^{\left(\mu - \frac{\sigma^2}{2}\right)t + \sigma B_t}
 $$
 
 # Stochastic process
