@@ -30,30 +30,32 @@ $$
 \begin{align*}
 Y_t &=  M * X_t \\
 \text{where,}\\
-&\tilde{\gamma} = \textit{---> look at page 118 of book}\\
 &\tilde{A} = MAM^T\\
-&\tilde{\nu}(B) = \nu(\{x| Mx\in B \})
+&\tilde{\nu}(B) = \nu(\{x| Mx\in B \}) \\
+&\tilde{\gamma} = Mγ + \int_{R^n} y(1_{|y|≤1}(y) − 1_{S_1} (y))νY (dy), \quad S_1 = \{  Mx| |x|\leq 1\}
 \end{align*}
 $$
 
 
 
 ## Subordinator
+ $S_t$ be a non-decreasing Lévy subordinator (0,$\rho$,$b$)
+$$
+E[e^{uS_t}] = e^{t l(u)} \text{ , }\forall u ≤ 0 \quad \text{, where } l(u) = bu + \int_0^{\infty}(e^{ux} − 1)\rho(dx)
+$$
+We call l(u) the Laplace exponent of S. Since process S is increasing it can
+be interpreted as a “time deformation” and used to “time change” other Lévy processes as shown by the following theorem.
+
 Let $X_t$​ be a Lévy process  ($\gamma$, A,$\nu$), and let $S_t$ be a non-decreasing Lévy subordinator (0,$\rho$,$b$). The subordinated Lévy process $Y_t$ is defined as:
 $$ 
 \begin{align*}
 Y_t &= X_{S_t} \\
 \text{where,}\\
-&\tilde{\gamma} = \textit{---> look at page 118 of book}\\
-&\tilde{A} = MAM^T\\
-&\tilde{\nu}(B) = \nu(\{x| Mx\in B \})
+&\tilde{A} = bA\\
+&\tilde{\nu}(B) = b\nu(B) + \int_0^\infty p_s^X(B) \rho(ds)\\
+&\tilde{\gamma} = b\gamma + \int_0^\infty \rho(ds) \int_{|x|\leq 1} x p_s^X(dx)\\
 \end{align*}
 $$
-
-The characteristic function of the subordinated Lévy process $Y_t$ can be expressed as the product of the characteristic function of the original Lévy process $X_t$ and the characteristic function of the Lévy subordinator $S_t$:
-$$E[euSt] = e^{t l(u)} \text{ , }\forall u ≤ 0 \quad \text{, where } l(u) = bu + \int_0^{\infty}(eux − 1)\rho(dx).$$
-
-*More at the theorem 4.2 book*
 
 
 
