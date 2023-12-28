@@ -20,3 +20,6 @@ $$
 
 # Kou
 
+$$
+\Psi(u) = -\frac{\sigma^2 u^2}{2} + iu\lambda\left(\frac{p}{\lambda_p - iu} - \frac{1-p}{\lambda_m + iu}\right)
+$$
