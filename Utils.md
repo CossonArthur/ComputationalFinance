@@ -43,12 +43,12 @@ $$ dX_t = \mu X_tdt + \sigma X_tdW_t $$
 ## Ornstein-Uhlenbeck (OU)
 
 $$ dX_t = \alpha (\mu-X_tdt) + \sigma X_tdW_t $$
-- X(t) is the value of the process at time tt,
-- θ is the speed of mean reversion,
-- μ is the long-term mean or target value,
-- σ is the volatility of the process,
-- W(t) is a Wiener process or Brownian motion at time tt,
-- dt is the differential of time.
+- $X_t$ is the value of the process at time t,
+- $\theta$ is the speed of mean reversion,
+- $\mu$ is the long-term mean or target value,
+- $\sigma$ is the volatility of the process,
+- $W_t$ is a Wiener process or Brownian motion at time t,
+- $dt$ is the differential of time.
 
 ## Heston
 $$
