@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "68f0e822cd3e351a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Utils.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "494e5aba7c5d57e7",
             "type": "leaf",
             "state": {
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Utils.md",
+                "file": "Spot price simulation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Utils.md",
+                "file": "Spot price simulation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Utils.md"
+                "file": "Spot price simulation.md"
               }
             }
           },
@@ -154,8 +142,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 328.5,
-    "collapsed": true
+    "width": 328.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -163,14 +150,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "68f0e822cd3e351a",
+  "active": "494e5aba7c5d57e7",
   "lastOpenFiles": [
+    "Utils.md",
     "SDE solver.md",
     "Spot price simulation.md",
     "Calibration.md",
     "Option pricing/European/Carr-Madan.md",
     "Option.md",
-    "Utils.md",
     "Processus/Countdown poisson process.md",
     "Processus/Brownian motion.md",
     "2023-12-27.md",
