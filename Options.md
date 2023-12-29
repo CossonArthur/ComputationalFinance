@@ -142,9 +142,41 @@ A barrier option is a type of financial derivative with a feature known as a bar
 - Advantages:** Barrier options are often used for risk management, allowing investors to tailor their exposure to specific price movements and market conditions.
 
 ## Discounted pay-off
+The pay-off is similar to an European Option, if the condition with the barrier is satisfied
 $$
 \Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
 $$
+> [!code]- Code
+> Down-and-In (DI)
+> ```matlab
+> D = 1 % barrier
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0) .\*(min(S,[],2)<D)
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+>
+> Up-and-In (UI)
+> ```matlab
+> D = 1 % barrier
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0) .\*(max(S,[],2)>D)
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+>
+>Down-and-Out (DO)
+> ```matlab
+> D = 1 % barrier
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0) .\*(min(S,[],2)>D)
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+>
+> Up-and-Out (UO)
+> ```matlab
+> D = 1 % barrier
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0) .\*(max(S,[],2)<D)
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+
+
+
 
 # Basket
 ## Definition
