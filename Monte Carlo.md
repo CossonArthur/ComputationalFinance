@@ -26,13 +26,13 @@ A confidence interval provides a range of values that is likely to contain the t
 
    The formula for a confidence interval for the mean (\(\mu\)) might be:
 
-   $IC = \tilde \theta \pm Z \frac{\sigma}{\sqrt{N}}$
+   $CI = \tilde \theta \pm Z \frac{\sigma}{\sqrt{N}}$
 
    where Z is inverse normal distribution 
 
 >[!Notes]- Code
 > ```matlab
-> [price]
+> [price, ~, CI] = normfit(disc_payoff) % CI at 95%
 > or
 > alpha=0.05;
 > z = norminv(1-alpha/2);
