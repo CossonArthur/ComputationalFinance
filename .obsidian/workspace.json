@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spot price simulation.md",
+                "file": "Monte Carlo.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Monte Carlo.md",
+                "file": "SDE solver.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -164,12 +163,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b2007eeb294911f3",
+  "active": "f1ebcf96697bfafb",
   "lastOpenFiles": [
     "Spot price simulation.md",
+    "SDE solver.md",
     "Monte Carlo.md",
     "Option.md",
-    "SDE solver.md",
     "Probability theory.md",
     "Option pricing/European/Black & Scholes.md",
     "Option pricing/European/Carr-Madan.md",
