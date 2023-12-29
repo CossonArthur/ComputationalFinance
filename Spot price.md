@@ -1,3 +1,11 @@
+
+# Modelisation
+
+# Diffusion
+
+
+
+# Jump diffusion
 Under $Q$, $E_0^Q[e^{-rT}S_T] = S_0$ which imply:
 $$
 	\mu=r -\frac{\sigma^2}{2}

@@ -108,38 +108,23 @@ The discounted payoff for a Lookback option depends on whether it is a call or a
 
 $$
 \begin{align}
-\Phi(S_T)&=e^{−rT}\cdot(S_T−\min⁡_{0≤t≤T}S_t)\\
-&=e^{−rT}\cdot(S_T​−\min_{0≤t≤T}​S_t​)
+\text{Floating strike} &: \Phi(S_T)=e^{−rT}\cdot(S_T​−\min_{0\leq t\leq T}​S_t​)\\
+\text{Fixed strike} &: \Phi(S_T)=e^{−rT}\cdot \max(S_\max​−K)
 \end{align}
 $$
 
-
 > [!code]- Code
+> Floating strike:
 >```matlab
 >DiscPayoff_Call = exp(-r*T) * (S(:,end) - min(S, [], 2));
 >[Price_Call, ~, Price_CI_Call] = normfit(DiscPayoff_Call);
 >```
-
-
-# Basket
-## Definition
-A basket option is a type of financial derivative that provides the holder with the right, but not the obligation, to buy or sell a portfolio of underlying assets at a predetermined price (strike price) on or before the expiration date.
-- **Multiple Underlying Assets:** Unlike single-asset options, basket options are linked to a basket or portfolio of underlying assets, which can include stocks, commodities, or other financial instruments.
-- **Advantages:** Investors use basket options for risk management and to hedge against movements in a diversified portfolio, providing a more comprehensive approach to managing market exposure.
-## Discounted pay-off
-$$
-\Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
-$$
-
-
-> [!code]- Code
-> Fixed Strike
-> ```matlab
-> DiscPayoff=exp(-r*T)*max( S(:,2)-K, 0);
->[Price,~,Price_CI]=normfit( DiscPayoff )
+>
+>Fixed strike
+>```matlab
+>DiscPayoff_Call = exp(-r*T) * (max(S, [], 2) - K);
+>[Price_Call, ~, Price_CI_Call] = normfit(DiscPayoff_Call);
 >```
->to be mdified
-
 
 
 
@@ -161,4 +146,21 @@ $$
 \Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
 $$
 
-## Pricing
+# Basket
+## Definition
+A basket option is a type of financial derivative that provides the holder with the right, but not the obligation, to buy or sell a portfolio of underlying assets at a predetermined price (strike price) on or before the expiration date.
+- **Multiple Underlying Assets:** Unlike single-asset options, basket options are linked to a basket or portfolio of underlying assets, which can include stocks, commodities, or other financial instruments.
+- **Advantages:** Investors use basket options for risk management and to hedge against movements in a diversified portfolio, providing a more comprehensive approach to managing market exposure.
+## Discounted pay-off
+$$
+\Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
+$$
+
+
+> [!code]- Code
+> Fixed Strike
+> ```matlab
+> DiscPayoff=exp(-r*T)*max( S(:,2)-K, 0);
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+>to be mdified
