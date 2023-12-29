@@ -90,7 +90,35 @@ $$
 >```
 
 
+# Lookback Option
 
+## Definition
+
+A Lookback option is a type of financial derivative that gives the holder the right, but not the obligation, to buy (call option) or sell (put option) the underlying asset at its highest or lowest price over a specified period. The unique feature of a Lookback option is that the payoff depends on the extreme price (maximum or minimum) reached by the underlying asset during the option's life.
+
+**Types:**
+-  **Fixed Lookback Option:** Pays the maximum (for a call) or minimum (for a put) price of the underlying asset over the option period.
+- **Floating Lookback Option:** Pays the maximum (for a call) or minimum (for a put) price of the underlying asset at the option's expiration.
+**Advantages:**
+Lookback options provide investors with the opportunity to benefit from favorable price movements without being locked into a single price point.
+
+## Discounted Payoff
+
+The discounted payoff for a Lookback option depends on whether it is a call or a put option. For a call option, the discounted payoff is given by:
+
+$$
+\begin{align}
+\Phi(S_T)&=e^{−rT}\cdot(S_T−\min⁡_{0≤t≤T}S_t)\\
+&=e^{−rT}\cdot(S_T​−\min_{0≤t≤T}​S_t​)
+\end{align}
+$$
+
+
+> [!code]- Code
+>```matlab
+>DiscPayoff_Call = exp(-r*T) * (S(:,end) - min(S, [], 2));
+>[Price_Call, ~, Price_CI_Call] = normfit(DiscPayoff_Call);
+>```
 
 
 # Basket
@@ -126,8 +154,7 @@ A barrier option is a type of financial derivative with a feature known as a bar
     - **Up-and-In (UI):** The option becomes active if the price rises above the barrier.
     - **Down-and-Out (DO):** The option becomes null and void if the price falls below the barrier.
     - **Up-and-Out (UO):** The option becomes null and void if the price rises above the barrier.
-- **Risk Management:** Barrier options are often used for risk management, allowing investors to tailor their exposure to specific price movements and market conditions.
-- **Complexity and Customization:** Barrier options can add complexity to derivative contracts due to the dynamic nature of their activation or deactivation based on barrier levels. However, this complexity also provides opportunities for customization.
+- Advantages:** Barrier options are often used for risk management, allowing investors to tailor their exposure to specific price movements and market conditions.
 
 ## Discounted pay-off
 $$
