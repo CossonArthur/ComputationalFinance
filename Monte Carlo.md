@@ -68,7 +68,7 @@ Suppose we know the expected value of another functional f of X, such that f and
 $$
 \begin{align}
 \tilde \theta_{CV} &= \frac1n \sum_{i=1}^n g(Xi ) + \alpha (f(X_i) - E[f(X)])\\
-\alpha &= \frac{\text{Cov}(g(X),f(X))}{\text{Var}(f(X))}
+\alpha &= -\frac{\text{Cov}(g(X),f(X))}{\text{Var}(f(X))}
 \end{align}
 $$
 
