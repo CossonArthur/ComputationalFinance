@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Options.md",
+                "file": "SDE solving.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Options.md",
+                "file": "SDE solving.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Options.md",
+                "file": "SDE solving.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Options.md"
+                "file": "SDE solving.md"
               }
             }
           },
@@ -141,12 +141,12 @@
   },
   "active": "772302a7a6c0a8a7",
   "lastOpenFiles": [
-    "Monte Carlo.md",
     "Options.md",
+    "Monte Carlo.md",
     "Probability theory.md",
     "Spot price.md",
     "Option pricing/European/Black & Scholes.md",
-    "SDE solver.md",
+    "SDE solving.md",
     "Option pricing/European/Carr-Madan.md",
     "Calibration.md",
     "Processus/Countdown poisson process.md",
