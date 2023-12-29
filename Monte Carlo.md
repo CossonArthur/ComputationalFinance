@@ -54,10 +54,6 @@ The second one consist in decreasing the variance to better approximate the real
 ### Antithetic Variables
 Let's consider a scenario where you are simulating a random variable X. The antithetic variable X′ is generated to be **negatively correlated** with X. The average of X and X′ should remain constant.
 
-Possibilities to get negatively correlated : 
-- $X' = - X$
-- if $X = F^{-1}(p)$ then $X' = F^{-1}(1-p)$
-
 **Process:**
 *Generate Pairs*
 - For each random variable you're simulating, generate a pair of negatively correlated variables from the same distribution
@@ -65,6 +61,9 @@ Possibilities to get negatively correlated :
 *Calculate Average*
 - For each pair, calculate the average of the two variables (X+X')/2
 
+Possibilities to get negatively correlated : 
+- $X' = - X$
+- if $X = F^{-1}(p)$ then $X' = F^{-1}(1-p)$
 
 ### Control variable
 The idea is to use a function on which property can be computed through a known formula and which is close to the function that we want to approximate.
