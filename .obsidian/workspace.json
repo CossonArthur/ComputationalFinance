@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Monte Carlo.md",
+                "file": "Option pricing/European/Carr-Madan.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "carr",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Monte Carlo.md",
+                "file": "Option pricing/European/Carr-Madan.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Monte Carlo.md",
+                "file": "Option pricing/European/Carr-Madan.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +115,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Monte Carlo.md"
+                "file": "Option pricing/European/Carr-Madan.md"
               }
             }
           },
@@ -139,11 +140,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f1ebcf96697bfafb",
+  "active": "772302a7a6c0a8a7",
   "lastOpenFiles": [
+    "Monte Carlo.md",
     "SDE solving.md",
     "Options.md",
-    "Monte Carlo.md",
     "Probability theory.md",
     "Spot price.md",
     "Option pricing/European/Black & Scholes.md",
