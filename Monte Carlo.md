@@ -1,19 +1,19 @@
-**Presentation:**
-Monte Carlo simulation is a computational technique that uses random sampling to estimate complex mathematical results. It is named after the Monte Carlo Casino in Monaco, known for its games of chance and randomness.
+# Definition
+Monte Carlo simulation is a computational technique that uses random sampling to estimate random variable.
 
 **Basic Formula:**
-The basic idea of Monte Carlo simulation is to use random sampling to approximate numerical results. In the context of finance, physics, engineering, or other fields, it involves generating a large number of random samples to estimate the distribution of an outcome or to solve a problem that might be deterministic in principle but is too complex to solve analytically.
+The basic idea of Monte Carlo simulation is to use random sampling to approximate numerical results. The basic formula for a Monte Carlo estimate is often represented as follows:
 
-The basic formula for a Monte Carlo estimate is often represented as follows:
-
-$\tilde \theta = \frac{1}{N} \sum_{i=1}^{N} f(x_i)$
+$$
+\tilde \theta = \frac{1}{N} \sum_{i=1}^{N} f(x_i)
+$$
 
 where:
 - N is the number of random samples,
 - $x_i$ represents a random sample from the input distribution,
 - $f(x_i)$ is the function that evaluates the outcome for the given sample.
 
-### Confidence Interval
+# Confidence Interval
 
 A confidence interval provides a range of values that is likely to contain the true value of an unknown parameter. In the context of Monte Carlo simulations, confidence intervals can be calculated to quantify the uncertainty associated with the estimated results.
 
@@ -30,7 +30,7 @@ A confidence interval provides a range of values that is likely to contain the t
    CI = \tilde \theta \pm Z_{1-\alpha/2} \frac{\sigma}{\sqrt{N}}
    $$
 
-   where Z is inverse normal distribution at 1
+   where Z is inverse normal distribution at $1-\alpha/2$
 
 >[!Notes]- Code
 > ```matlab
@@ -39,3 +39,14 @@ A confidence interval provides a range of values that is likely to contain the t
 > alpha=0.05;
 > z = norminv(1-alpha/2);
 >```
+
+
+# Performance 
+To improve the confidence of the estimation, there two levers :
+- increase $N$
+- decrease $\sigma$
+
+# N increase
+The first one consist in increasing the number of samples in the distribution to better approximate the real value.
+
+#
