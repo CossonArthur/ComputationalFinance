@@ -54,9 +54,9 @@ The second one consist in decreasing the variance to better approximate the real
 ### Antithetic Variables
 Let's consider a scenario where you are simulating a random variable X. The antithetic variable X′ is generated to be **negatively correlated** with X. The average of X and X′ should remain constant.
 
-possibility to get negatively correlated : 
-- X' = - X
-- if
+Possibilities to get negatively correlated : 
+- $X' = - X$
+- if $X = F^{-1}(p)$ then $X' = F^{-1}(1-p)$
 
 **Process:**
 *Generate Pairs*
@@ -64,8 +64,6 @@ possibility to get negatively correlated :
 - The correlation ensures that the average of the pairs remains constant.
 *Calculate Average*
 - For each pair, calculate the average of the two variables (X+X')/2
-
-
 
 
 ### Control variable
