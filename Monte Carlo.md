@@ -26,9 +26,11 @@ A confidence interval provides a range of values that is likely to contain the t
 
    The formula for a confidence interval for the mean (\(\mu\)) might be:
 
-   $CI = \tilde \theta \pm Z \frac{\sigma}{\sqrt{N}}$
+   $$
+   CI = \tilde \theta \pm Z_{1-\alpha/2} \frac{\sigma}{\sqrt{N}}
+   $$
 
-   where Z is inverse normal distribution 
+   where Z is inverse normal distribution at 1
 
 >[!Notes]- Code
 > ```matlab
