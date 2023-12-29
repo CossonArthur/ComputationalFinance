@@ -1,3 +1,15 @@
+
+The price of an option depends of the future value of the underlying asset:
+$$
+\begin{align*}
+\text{price} &= E[e^{-rT}\Phi(S_T)]\\
+\text{where,}\\
+r &: \text{rate of risk-free asset}\\
+T &: \text{time of execution}\\
+\Phi &: \text{pay-off of the option}\\
+\end{align*}
+$$
+
 # European
 
 ## Definition
