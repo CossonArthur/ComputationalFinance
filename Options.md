@@ -1,4 +1,3 @@
-
 The price of an option depends of the future value of the underlying asset, discounted by the return of the free rate asset:
 $$
 \begin{align*}
@@ -7,6 +6,13 @@ $$
 r &: \text{rate of risk-free asset}\\
 T &: \text{time of execution}\\
 \Phi &: \text{pay-off of the option}\\
+\end{align*}
+$$
+*For simplicity reason, only call payoff is shown for the payoff*
+$$
+\begin{align*}
+\text{Call} &: \Phi(S_T) = \max(S_t-K) \\
+\text{Put} &: \Phi(S_T) = \max(K-S_t)
 \end{align*}
 $$
 
