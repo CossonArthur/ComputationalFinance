@@ -177,6 +177,49 @@ $$
 
 
 
+# Barrier
+## Definition
+A barrier option is a type of financial derivative with a feature known as a barrier, which, when crossed, can alter the option's characteristics. Barrier options can be either knock-in or knock-out, depending on whether the barrier activates or deactivates the option.
+- **Barrier Types:**
+    - **Knock-In:** In a knock-in barrier option, the option becomes active (starts to exist) only if the underlying asset's price reaches or crosses a specified barrier level during the option's life.
+    - **Knock-Out:** In a knock-out barrier option, the option becomes null and void if the underlying asset's price reaches or crosses a predetermined barrier level during the option's life.
+- Advantages:** Barrier options are often used for risk management, allowing investors to tailor their exposure to specific price movements and market conditions.
+
+## Discounted pay-off
+The pay-off is similar to an European Option, if the condition with the barrier is satisfied
+$$
+\Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
+$$
+> [!code]- Code
+> Down-and-In (DI)
+> ```matlab
+> D = 1 % barrier
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0) .\*(min(S,[],2)<D)
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+>
+> Up-and-In (UI)
+> ```matlab
+> D = 1 % barrier
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0) .\*(max(S,[],2)>D)
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+>
+>Down-and-Out (DO)
+> ```matlab
+> D = 1 % barrier
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0) .\*(min(S,[],2)>D)
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+>
+> Up-and-Out (UO)
+> ```matlab
+> D = 1 % barrier
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0) .\*(max(S,[],2)<D)
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+
+
 
 # Basket
 ## Definition
