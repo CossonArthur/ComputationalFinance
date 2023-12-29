@@ -4,28 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "e61e6fafeb87183b",
+        "id": "3f7a39b5d46d0a00",
         "type": "tabs",
         "children": [
           {
-            "id": "4ff30029f3850c86",
+            "id": "fc103a46a7e971a8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Monte Carlo.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b2007eeb294911f3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "SDE solver.md",
+                "file": "Spot price simulation.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Monte Carlo.md",
+                "file": "Spot price simulation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Monte Carlo.md",
+                "file": "Spot price simulation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Monte Carlo.md"
+                "file": "Spot price simulation.md"
               }
             }
           },
@@ -163,12 +151,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f1ebcf96697bfafb",
+  "active": "fc103a46a7e971a8",
   "lastOpenFiles": [
-    "Spot price simulation.md",
+    "Options.md",
     "SDE solver.md",
     "Monte Carlo.md",
-    "Option.md",
+    "Spot price simulation.md",
     "Probability theory.md",
     "Option pricing/European/Black & Scholes.md",
     "Option pricing/European/Carr-Madan.md",
