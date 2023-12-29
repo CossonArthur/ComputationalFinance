@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "b2007eeb294911f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Monte Carlo.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spot price simulation.md",
+                "file": "Monte Carlo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spot price simulation.md",
+                "file": "Monte Carlo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spot price simulation.md"
+                "file": "Monte Carlo.md"
               }
             }
           },
@@ -151,10 +164,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4ff30029f3850c86",
+  "active": "b2007eeb294911f3",
   "lastOpenFiles": [
-    "Option.md",
     "Spot price simulation.md",
+    "Monte Carlo.md",
+    "Option.md",
     "SDE solver.md",
     "Probability theory.md",
     "Option pricing/European/Black & Scholes.md",
