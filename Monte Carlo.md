@@ -54,12 +54,19 @@ The second one consist in decreasing the variance to better approximate the real
 ### Antithetic Variables
 Let's consider a scenario where you are simulating a random variable X. The antithetic variable X′ is generated to be **negatively correlated** with X. The average of X and X′ should remain constant.
 
+possibility to get negatively correlated : 
+- X' = - X
+- if
+
 **Process:**
 *Generate Pairs*
 - For each random variable you're simulating, generate a pair of negatively correlated variables from the same distribution
 - The correlation ensures that the average of the pairs remains constant.
 *Calculate Average*
 - For each pair, calculate the average of the two variables (X+X')/2
+
+
+
 
 ### Control variable
 The idea is to use a function on which property can be computed through a known formula and which is close to the function that we want to approximate.
@@ -71,4 +78,23 @@ $$
 \alpha &= -\frac{\text{Cov}(g(X),f(X))}{\text{Var}(f(X))}
 \end{align}
 $$
+
+
+> [!code]- Code
+> ```matlab
+> %> f(x)=S(T)
+>% 1. sample alpha
+>S=Asset_Merton(Nsim/100,T,params,M,S0,r);
+>f=S(:,end);
+g=exp(-r*T)*max( f-K, 0);
+VC=cov(f,g);
+alpha=-VC(1,2)/VC(1,1);
+% 2. compute the price
+S=Asset_Merton(Nsim,T,params,M,S0,r);
+f=S(:,end);
+Ef=S0*exp(r*T);
+g=exp(-r*T)*max( f-K, 0);
+[Price,~,Price_CI]=normfit( g+alpha*(f-Ef) )
+>```
+
 
