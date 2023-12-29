@@ -1,8 +1,8 @@
 The stock price is define as 
 $$ S_t = S_0e^{X_t} $$
-Under $Q$, 
+Under $Q$, $E_0^Q[e^{-rT}S_T] = S_0$ which imply:
 $$
-E_0^Q[e^{-rT}S_T] = S_0
+\mu=r +\frac{\sigma^2}{2}
 $$
 
 
