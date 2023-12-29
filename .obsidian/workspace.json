@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Option.md",
+                "file": "Spot price simulation.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Option.md",
+                "file": "Spot price simulation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Option.md",
+                "file": "Spot price simulation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Option.md"
+                "file": "Spot price simulation.md"
               }
             }
           },
@@ -153,12 +153,12 @@
   },
   "active": "4ff30029f3850c86",
   "lastOpenFiles": [
+    "Option.md",
     "Spot price simulation.md",
     "SDE solver.md",
     "Probability theory.md",
     "Option pricing/European/Black & Scholes.md",
     "Option pricing/European/Carr-Madan.md",
-    "Option.md",
     "Calibration.md",
     "Processus/Countdown poisson process.md",
     "Processus/Brownian motion.md",

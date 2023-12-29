@@ -1,5 +1,22 @@
 The stock price is define as 
 $$ S_t = S_0e^{X_t} $$
+Under $Q$, 
+$$
+E_0^Q[e^{-rT}S_T] = S_0
+$$
+
+
+>[!notes]- Proof
+>
+>$E_0^Q[e^{-rT}S_T] = S_0$
+>$E_0^Q[e^{-rT}S_0e^{\mu T+\sigma W_T}] = S_0$
+>$e^{(\mu-r) T} \cdot E_0^Q[e^{\sigma W_T}] = 1$
+>$e^{(\mu-r) T} \cdot e^{-\frac{\sigma^2}{2} T}] = 1$
+>$(\mu-r -\frac{\sigma^2}{2})=0$
+>$\mu=r +\frac{\sigma^2}{2}$
+
+
+
 
 # Merton 
 Merton model the spot price as following the SDE:
