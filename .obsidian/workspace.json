@@ -109,17 +109,6 @@
             }
           },
           {
-            "id": "de1835bd1363f4ad",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
             "id": "dba53c18294d2a0b",
             "type": "leaf",
             "state": {
@@ -138,7 +127,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
