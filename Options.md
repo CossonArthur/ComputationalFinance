@@ -71,7 +71,7 @@ An Asian option is a type of financial derivative whose payoff is determined by 
 ## Discounted pay-off
 $$
 \begin{align}
-\text{Fixed Strike} &: \Phi(S_T) = e^{-rT}\cdot \max(\text{mean}(S_T)-K,0)\\
+\text{Fixed Strike} &: \Phi(S_T) = e^{-rT}\cdot \max(\text{mean}(S)-K,0)\\
 \text{Floating Strike} &: \Phi(S_T) = e^{-rT}\cdot \max(S_T-\text{mean}(S),0)\\
 \end{align}
 $$
@@ -85,7 +85,7 @@ $$
 >
 >Floating Strike
 > ```matlab
-> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0);
+> DiscPayoff=exp(-r*T)*max( S(:,end)-mean(S,2), 0);
 >[Price,~,Price_CI]=normfit( DiscPayoff )
 >```
 
@@ -102,7 +102,16 @@ A basket option is a type of financial derivative that provides the holder with 
 $$
 \Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
 $$
-## Pricing
+
+
+> [!code]- Code
+> Fixed Strike
+> ```matlab
+> DiscPayoff=exp(-r*T)*max( S(:,2)-K, 0);
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+>to be mdified
+
 
 
 
