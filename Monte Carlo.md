@@ -62,7 +62,7 @@ Let's consider a scenario where you are simulating a random variable X. The anti
 - For each pair, calculate the average of the two variables (X+X')/2
 
 ### Control variable
-The idea is to use a function on which proprety can be computed throught a known formula and which is close to the function that we want to approximate.
+The idea is to use a function on which property can be computed through a known formula and which is close to the function that we want to approximate.
 
 Suppose we know the expected value of another functional f of X, such that f and g are one "close" to the other.
 $$
