@@ -28,7 +28,14 @@ A European option is a type of financial derivative that grants the holder the r
 $$
 \Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
 $$
-## Pricing
+
+
+> [!code]- Code
+> ```matlab
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0);
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+
 
 >[!notes]- Black & Scholes
 >![Black & Scholes](Black%20&%20Scholes.md)
@@ -46,7 +53,13 @@ An American option is a type of financial derivative that grants the holder the 
 $$
 \Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
 $$
-## Pricing
+
+> [!code]- Code
+> ```matlab
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0);
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+to be modified
 
 
 # Asian 
@@ -59,10 +72,25 @@ An Asian option is a type of financial derivative whose payoff is determined by 
 $$
 \begin{align}
 \text{Fixed Strike} &: \Phi(S_T) = e^{-rT}\cdot \max(\text{mean}(S_T)-K,0)\\
-\text{Floating strike} &: \Phi(S_T) = e^{-rT}\cdot \max(S_T-\text{mean}(S),0)\\
+\text{Floating Strike} &: \Phi(S_T) = e^{-rT}\cdot \max(S_T-\text{mean}(S),0)\\
 \end{align}
 $$
-## Pricing
+
+> [!code]- Code
+> Fixed Strike
+> ```matlab
+> DiscPayoff=exp(-r*T)*max( mean(S,2)-K, 0);
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+>
+>Floating Strike
+> ```matlab
+> DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0);
+>[Price,~,Price_CI]=normfit( DiscPayoff )
+>```
+
+
+
 
 
 # Basket

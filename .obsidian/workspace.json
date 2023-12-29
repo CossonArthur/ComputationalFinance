@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "3f7a39b5d46d0a00",
+        "id": "8fa107b01c22947d",
         "type": "tabs",
         "children": [
           {
-            "id": "fc103a46a7e971a8",
+            "id": "772302a7a6c0a8a7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Option pricing/European/Black & Scholes.md",
+                "file": "Options.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Option pricing/European/Black & Scholes.md",
+                "file": "Options.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Option pricing/European/Black & Scholes.md",
+                "file": "Options.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Option pricing/European/Black & Scholes.md"
+                "file": "Options.md"
               }
             }
           },
@@ -151,14 +151,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fc103a46a7e971a8",
+  "active": "772302a7a6c0a8a7",
   "lastOpenFiles": [
+    "Option pricing/European/Black & Scholes.md",
     "Options.md",
     "Spot price simulation.md",
     "SDE solver.md",
     "Monte Carlo.md",
     "Probability theory.md",
-    "Option pricing/European/Black & Scholes.md",
     "Option pricing/European/Carr-Madan.md",
     "Calibration.md",
     "Processus/Countdown poisson process.md",
