@@ -46,7 +46,21 @@ To improve the confidence of the estimation, there two levers :
 - increase $N$
 - decrease $\sigma$
 
-# N increase
+## N increase
 The first one consist in increasing the number of samples in the distribution to better approximate the real value.
 
-#
+## Variance reduction
+The second one consist in decreasing the variance to better approximate the real value.
+### Antithetic Variables
+Let's consider a scenario where you are simulating a random variable X. The antithetic variable X′ is generated to be **negatively correlated** with X. The average of X and X′ should remain constant.
+
+**Process:**
+*Generate Pairs*
+- For each random variable you're simulating, generate a pair of negatively correlated variables from the same distribution
+- The correlation ensures that the average of the pairs remains constant.
+*Calculate Average*
+- For each pair, calculate the average of the two variables (X+X')/2
+
+
+
+
