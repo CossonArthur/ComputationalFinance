@@ -28,9 +28,8 @@ A European option is a type of financial derivative that grants the holder the r
 $$
 \Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
 $$
-
-
-> [!code]- Code
+## Pricing
+> [!code]- MC code
 > ```matlab
 > DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0);
 >[Price,~,Price_CI]=normfit( DiscPayoff )
@@ -53,8 +52,8 @@ An American option is a type of financial derivative that grants the holder the 
 $$
 \Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
 $$
-
-> [!code]- Code
+## Pricing
+> [!code]- MC code
 > ```matlab
 > DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0);
 >[Price,~,Price_CI]=normfit( DiscPayoff )
@@ -76,7 +75,8 @@ $$
 \end{align}
 $$
 
-> [!code]- Code
+## Pricing
+> [!code]- MC code
 > Fixed Strike
 > ```matlab
 > DiscPayoff=exp(-r*T)*max( mean(S,2)-K, 0);
@@ -112,7 +112,7 @@ $$
 \text{Fixed strike} &: \Phi(S_T)=e^{−rT}\cdot \max(S_\max​−K)
 \end{align}
 $$
-
+## Pricing
 > [!code]- Code
 > Floating strike:
 >```matlab
@@ -125,8 +125,6 @@ $$
 >DiscPayoff_Call = exp(-r*T) * (max(S, [], 2) - K);
 >[Price_Call, ~, Price_CI_Call] = normfit(DiscPayoff_Call);
 >```
-
-
 
 # Barrier
 ## Definition
