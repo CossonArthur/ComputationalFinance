@@ -1,11 +1,8 @@
 # Pricing
-The price of an option can be obtain through two methods
-
-## Monte Carlo (MC)
 The price depends of the future value of the underlying asset, discounted by the return of the free rate asset:
 $$
 \begin{align*}
-\text{price} &= E[e^{-rT}\Phi(S_T)]\\
+C &= E[e^{-rT}\Phi(S_T)]\\
 \text{where,}\\
 r &: \text{rate of risk-free asset}\\
 T &: \text{time of execution}\\
@@ -19,6 +16,89 @@ $$
 \text{Put} &: \Phi(S_T) = \max(K-S_t)
 \end{align*}
 $$
+
+## Monte Carlo (MC)
+Monte Carlo simulation is a computational technique that uses random sampling to estimate random variable.
+
+**Basic Formula:**
+The basic idea of Monte Carlo simulation is to use random sampling to approximate numerical results. The basic formula for a Monte Carlo estimate is often represented as follows:
+
+$$
+\tilde \theta = \frac{1}{N} \sum_{i=1}^{N} f(x_i)
+$$
+
+where:
+- N is the number of random samples,
+- $x_i$ represents a random sample from the input distribution,
+- $f(x_i)$ is the function that evaluates the outcome for the given sample.
+
+### Confidence Interval
+
+1. **Generate Samples:** Perform the Monte Carlo simulation to generate a large number of random samples.
+2. **Calculate Estimates:** For each sample, calculate the desired outcome or parameter of interest using the simulation model.
+3. **Compute Confidence Interval:** Use statistical methods to compute the confidence interval around the estimated result. One common approach is to use the sample mean and standard deviation to construct a confidence interval.
+
+   The formula for a confidence interval for the mean $\tilde\theta$ might be:   $$
+   CI = \tilde \theta \pm Z_{1-\alpha/2} \frac{\sigma}{\sqrt{N}}
+   $$   where Z is inverse normal distribution at $1-\alpha/2$
+
+>[!Notes]- Code
+> ```matlab
+> [price, ~, CI] = normfit(disc_payoff) % CI at 95%
+> or
+> alpha=0.05;
+> z = norminv(1-alpha/2);
+>```
+
+
+### Performance 
+To improve the confidence of the estimation, there two levers :
+- **N increase**
+	The first one consist in increasing the number of samples in the distribution to better approximate the real value.
+
+- **Variance reduction**
+	The second one consist in decreasing the variance to better approximate the real value.
+	*Antithetic Variables*
+	Let's consider a scenario where you are simulating a random variable X. The antithetic variable X′ is generated to be **negatively correlated** with X. The average of X and X′ should remain constant.
+
+	*Generate Pairs*
+	- For each random variable you're simulating, generate a pair of negatively correlated variables from the same distribution
+	- The correlation ensures that the average of the pairs remains constant.
+	*Calculate Average*
+	- For each pair, calculate the average of the two variables (X+X')/2
+	
+	Possibilities to get negatively correlated : 
+	- $X' = - X$
+	- if $X = F^{-1}(p)$ then $X' = F^{-1}(1-p)$
+	
+	*Control variable*
+	The idea is to use a function on which property can be computed through a known formula and which is close to the function that we want to approximate.
+	
+	Suppose we know the expected value of another functional f of X, such that f and g are one "close" to the other.	$$
+	\begin{align}
+	\tilde \theta_{CV} &= \frac1n \sum_{i=1}^n g(Xi ) + \alpha (f(X_i) - E[f(X)])\\
+	\alpha &= -\frac{\text{Cov}(g(X),f(X))}{\text{Var}(f(X))}
+	\end{align}
+	$$
+> [!code]- Code
+> ```matlab
+> %> f(x)=S(T)
+>% 1. sample alpha
+>S=Asset_Merton(Nsim/100,T,params,M,S0,r);
+>f=S(:,end);
+g=exp(-r*T)*max( f-K, 0);
+VC=cov(f,g);
+alpha=-VC(1,2)/VC(1,1);
+% 2. compute the price
+S=Asset_Merton(Nsim,T,params,M,S0,r);
+f=S(:,end);
+Ef=S0*exp(r*T);
+g=exp(-r*T)*max( f-K, 0);
+[Price,~,Price_CI]=normfit( g+alpha*(f-Ef) )
+>```
+
+
+
 
 ## Carr-Madan
 For stochastic process with jumps, there is no general formula to compute the option price, as the characteristic function of the underlying asset is not known. To compute the call option price  $C(k) = e^{−rT} E[(e^{rT+X_T} − e^k)^+]$, we use the Fourier Transform.
