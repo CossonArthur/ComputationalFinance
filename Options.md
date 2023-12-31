@@ -173,33 +173,23 @@ Transform this into a convolution -> Fourier -> mul -> inverse Fourier
 
 
 ## American price
-The previous method cannot be used without giving futur information to determine current price. 
-### Algorithm Steps:
-1. **Generate Paths:**
-    Simulate a large number of possible future paths for the underlying asset using a stochastic process (e.g., geometric Brownian motion).
-2. **Calculate Payoffs:**
-    For each path, calculate the option payoff at each time step. This involves comparing the option value at that point in time with the intrinsic value (the difference between the option's strike price and the underlying asset's price).
-3. **Regression Analysis:**
-    Perform a regression analysis to approximate the continuation value. This is the expected future value of holding the option rather than exercising it immediately.
-4. **Optimal Exercise Decision:**
-    Compare the continuation value with the intrinsic value at each time step. If the intrinsic value is greater, it is optimal to exercise the option. Otherwise, continue holding.
-5. **Backward Induction:**
-    Work backward through the paths, applying the optimal exercise decisions to calculate the expected payoff at each time step.
-6. **Discounting:**
-    Discount the expected payoffs back to the present value.
-    
-The algorithm typically uses a polynomial regression. The continuation value (CtCt​) is modeled as a function of certain basis functions:
+The previous method cannot be used without giving future information to determine current price. 
 
-$C_t=\sum_{i=1}^n = \beta_i(S_t) \cdot B_i(S_t)$
+To do that a smart way is to go step by step backward in time:
 
-Here:
+$$
+\begin{align}
+IV_t &= max(S_t-K,0)\\
+IC_t &= E[e^{-r\Delta t}V_t|S_t] \approx \sum_k \alpha_{k,t} \cdot \psi_k(S_t)\\ 
+V_t &= \max(IV_t, IC_t)
+\end{align}
+$$
+$\alpha_{k,t}$ are obtain by doing a linear regression on all the simulations on their value at $t$
 
-- $C_t$ is the continuation value at time tt,
-- $S_t$​ is the stock price at time tt,
-- $B_i​(S_t​)$ are basis functions (e.g., polynomials),
-- $\beta_i$ are coefficients determined through regression.
 
-The coefficients $\beta_i$​ are estimated by regressing the future payoff on the basis functions using the paths where the option is not exercised early.
+> [!NOTE] In the moneuy
+> Better to consider only the simulation i such that $IV_t$ > 0
+
 
 > [!code]- Code
 > ```matlab
