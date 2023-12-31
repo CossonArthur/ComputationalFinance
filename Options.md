@@ -187,8 +187,8 @@ $$
 $\alpha_{k,t}$ are obtain by doing a linear regression on all the simulations on their value at $t$
 
 
-> [!NOTE] In the moneuy
-> Better to consider only the simulation i such that $IV_t$ > 0
+> [!NOTE] In the money
+> Better to consider only the simulation $i$ such that $IV_{i,t}$ > 0
 
 
 > [!code]- Code
