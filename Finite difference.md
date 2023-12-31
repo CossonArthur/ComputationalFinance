@@ -5,7 +5,8 @@ With M the discretisation in time, and N discretisation in strike
 ## B&S
 $$
 \begin{align}
-&\frac{∂V}{∂t}​+r\frac{∂V}{∂x}​​+\frac12​ σ^2 S^2 \frac{∂^2V}{∂x^2}​​−rV=0\\
+&x = \ln(\frac{S}{S_0})\\
+&\frac{∂V}{∂t}​+(r-\frac{σ^2}2)\frac{∂V}{∂x}​​+ \frac{σ^2}2 \frac{∂^2V}{∂x^2}​​−rV=0\\
 &V = V(t,x)\\
 &V(T,x) = \max(S_0e^x-K,0)
 \end{align}
