@@ -1,4 +1,11 @@
 
+# PDE
+## B&S
+$$
+\frac{∂t}{∂V}​+r\frac{∂S}{∂V}​​+\frac12​ σ^2 S^2 \frac{∂^2S}{∂V^2}​​−rV=0
+$$
+
+
 # Difference method
 To solve the SDE, $dX_t=a(X_t,t) \cdot dt+b(X_t,t) \cdot dW_t$ 
 

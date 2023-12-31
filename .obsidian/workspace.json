@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Options.md",
+                "file": "Finite difference.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Options.md",
+                "file": "Finite difference.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Options.md",
+                "file": "Finite difference.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Options.md"
+                "file": "Finite difference.md"
               }
             }
           },
@@ -127,7 +127,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -139,14 +139,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "772302a7a6c0a8a7",
+  "active": "f1ebcf96697bfafb",
   "lastOpenFiles": [
+    "Options.md",
     "Monte Carlo.md",
     "Calibration.md",
-    "Options.md",
     "Spot price.md",
     "Probability theory.md",
-    "SDE solving.md",
+    "Finite difference.md",
     "Option pricing/European/Carr-Madan.md",
     "Option pricing/European/Black & Scholes.md",
     "Processus/Countdown poisson process.md",
