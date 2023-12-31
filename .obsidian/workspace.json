@@ -142,11 +142,11 @@
   "active": "772302a7a6c0a8a7",
   "lastOpenFiles": [
     "Calibration.md",
+    "Options.md",
+    "Monte Carlo.md",
     "Spot price.md",
     "Probability theory.md",
     "SDE solving.md",
-    "Options.md",
-    "Monte Carlo.md",
     "Option pricing/European/Carr-Madan.md",
     "Option pricing/European/Black & Scholes.md",
     "Processus/Countdown poisson process.md",
