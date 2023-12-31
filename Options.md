@@ -201,6 +201,42 @@ Here:
 
 The coefficients $\beta_i$​ are estimated by regressing the future payoff on the basis functions using the paths where the option is not exercised early.
 
+> [!code]- Code
+> ```matlab
+> r=0.04; T=1; M=40; N=1e6; sigma=0.4; S0=1; K=1;
+S=AssetBS(r,sigma,S0,T,M,N);
+S=S(:,2:end); % we do not consider t=0 for early exercise
+dt=T/M;
+%==== INITIALIZE =========================
+Exercise_Time=M*ones(N,1);
+Put=max(0,K-S(:,end)); %payoff
+>
+%==== BACKWARD-IN-TIME ===================
+for i=M-1:-1:1
+    Inmoney=find(S(:,i)<K);
+    S_I=S(Inmoney,i);
+    %-- Intrinsic Value
+    IV=K-S_I;
+    %-- Continuation Value
+    %- Regression
+    A=[ones(length(S_I),1), S_I, S_I.^2];
+    b=Put(Inmoney).*exp(-r*dt*(Exercise_Time(Inmoney)-i));
+    alpha=A\b;
+    %- Continuation Value
+    CV=A*alpha;
+    %----------
+    %== i is an exercise instant?
+    Index=find(IV>CV);
+    Early_Exercise=Inmoney(Index);
+    % Update
+    Put(Early_Exercise)=IV(Index);
+    Exercise_Time(Early_Exercise)=i;
+end
+[price,~,CI]=normfit(Put.*exp(-r*dt*Exercise_Time))
+> ```
+
+
+
 ## Partial Intregal Differential Equation (PIDE)
 
 
