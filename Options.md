@@ -164,8 +164,11 @@ $$
 
 
 ## Convolution
-Allow to compute the price of complex option like Barrier.
-
+Allow to compute the price of complex option like Barrier. As convolution in Fourier space is a multiplication. We calculate the Fourier transform, multiply, then take the inverse.
+$$
+C = E[e^{-rT}\Phi(S_T) \cdot 1_{\{x<D\}}]
+$$
+Transform this into a convolution -> Fourier -> mul -> inverse Fourier
 
 
 ## Partial Intregal Differential Equation (PIDE)
