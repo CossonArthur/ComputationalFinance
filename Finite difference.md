@@ -1,3 +1,5 @@
+**M >> N**
+With M the discretisation in time, and N discretisation in strike
 
 # PDE
 ## B&S
