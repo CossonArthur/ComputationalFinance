@@ -2,7 +2,7 @@ For stochastic process with jumps, there is not general formula to compute the o
 
 $$
 \begin{align*}
-C(K) &= S_0 e^{-qT} - \frac{e^{-rT}}{\pi} \int_{0}^{\infty} \mathrm{Re}\left( \frac{e^{-iux}\phi(u-i)}{iu\phi(-i)} \right) K^{-iu} du \\
+C(K) &= \max(1 - e^{K-rT},0) - \frac{1}{2\pi} \int_{-\infty}^{\infty} \mathrm{Re}\left( \frac{e^{-iuK}\phi_T(u-i)}{iu\phi(-i)} \right) K^{-iu} du \\
 \text{where:} \\
 & C(K) \text{ is the call option price}, \\
 & K \text{ is the option strike price}, \\
