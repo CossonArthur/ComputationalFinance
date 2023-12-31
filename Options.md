@@ -164,6 +164,7 @@ $$
 
 
 ## Convolution
+Allow to compute the price of complex option like Barrier.
 
 
 
