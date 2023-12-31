@@ -209,30 +209,30 @@ S=S(:,2:end); % we do not consider t=0 for early exercise
 dt=T/M;
 %==== INITIALIZE =========================
 Exercise_Time=M*ones(N,1);
-Put=max(0,K-S(:,end)); %payoff
+Call=max(0,S(:,end)-K); %payoff
 >
 %==== BACKWARD-IN-TIME ===================
-for i=M-1:-1:1
-    Inmoney=find(S(:,i)<K);
-    S_I=S(Inmoney,i);
+for t=M-1:-1:1
+    Inmoney=find(S(:,t)>K);
+    S_t=S(Inmoney,t);
     %-- Intrinsic Value
-    IV=K-S_I;
+    IV=S_t-K;
     %-- Continuation Value
     %- Regression
-    A=[ones(length(S_I),1), S_I, S_I.^2];
-    b=Put(Inmoney).*exp(-r*dt*(Exercise_Time(Inmoney)-i));
+    A=[ones(length(S_t),1), S_t, S_t.^2];
+    b=Call(Inmoney).*exp(-r*dt*(Exercise_Time(Inmoney)-t));
     alpha=A\b;
     %- Continuation Value
     CV=A*alpha;
     %----------
-    %== i is an exercise instant?
+    %== t is an exercise instant?
     Index=find(IV>CV);
     Early_Exercise=Inmoney(Index);
     % Update
-    Put(Early_Exercise)=IV(Index);
-    Exercise_Time(Early_Exercise)=i;
+    Call(Early_Exercise)=IV(Index);
+    Exercise_Time(Early_Exercise)=t;
 end
-[price,~,CI]=normfit(Put.*exp(-r*dt*Exercise_Time))
+[price,~,CI]=normfit(Call.*exp(-r*dt*Exercise_Time))
 > ```
 
 
