@@ -230,9 +230,12 @@ V(t, x_{\max}) &= 0\\
 \end{align}
 $$
 #### Barrier
-| | |
-| --- | --- |
-|  |  |
+
+|  | $x_{\min}$ | $x_{\max}$ | $V(t, x_{\min})$ | $V(t, x_{\max})$ |
+| ---- | ---- | ---- | ---- | ---- |
+| Down&Out | $\ln(D/S_0)$ | same EU | 0 | same EU |
+| Up&Out | same EU | $\ln(U/S_0)$ | same EU | 0 |
+| Knock&Out | $\ln(D/S_0)$<br> | $\ln(U/S_0)$<br> | 0 | 0 |
 
 ### Difference method
 For all the schema, $dW_t$ when discretise is $\sqrt{\Delta t} . N(0,1)$
