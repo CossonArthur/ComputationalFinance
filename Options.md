@@ -195,7 +195,7 @@ With M the discretisation in time, and N discretisation in strike
 ### PIDE
 #### B&S
 $$
-
+\frac{\partial V}{\partial t} + rS\frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} - rV = 0
 $$
 With the transformation with the log price : $x = \ln(\frac{S}{S_0})$
 $$
@@ -204,13 +204,16 @@ $$
 
 #### Lévy process
 $$
-\frac{\partial V}{\partial t} + rS\frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} + \int_{-\infty}^{\infty} (V(S+z, t) - V(S, t)) \nu(dz) - rV = 0
+\frac{\partial V}{\partial t} + rS\frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} + \int_{-\infty}^{\infty} (V(S+z, t) - V(S, t)-S(e^y-1)) \nu(dz) - rV = 0
 $$
-
+With the transformation with the log price : $x = \ln(\frac{S}{S_0})$
+$$
+\frac{\partial V}{\partial t} + (r - \frac{\sigma^2}{2})\frac{\partial V}{\partial x} + \frac{\sigma^2}{2}\frac{\partial^2 V}{\partial x^2} + \int_{-\infty}^{\infty} (V(x+z, t) - V(x, t)) \nu(dz) - rV = 0
+$$
 
 ### Bordery Conditions
 
-We truncate the dimension for the price has the probability is almost always 0/
+We truncate the dimension for the price has the probability is almost always 0.
 - $x_{\max} = (r-\frac{\sigma^2}2)T + 6 \sigma\sqrt{T}$
 - $x_{\min} = (r-\frac{\sigma^2}2)T - 6 \sigma\sqrt{T}$
 
@@ -246,8 +249,7 @@ For all the schema, $dW_t$ when discretise is $\sqrt{\Delta t} . N(0,1)$
 
 **First order** : $f'(x)≈\frac{f(x+\Delta x)−f(x-\Delta x)​}{2\Delta x}$
 **Second order** : $f''(x)≈\frac{f(x+\Delta x)+f(x-\Delta x)​-2f(x)​}{\Delta x^2}$
-#### Euler
-##### Explicit
+#### Euler Explicit
 
 $$
 X_{n+1} = X_n + dX_{n}
@@ -288,7 +290,7 @@ $$
 >xlabel('Spot price'); title('Call Price');
 >Price=interp1(x,V,0,'spline')
 >```
-##### Implicit
+#### Euler Implicit
 Need to solve a linear system
 $$
 X_{n+1} = X_n + dX_{n+1}
@@ -337,7 +339,7 @@ $$
 >Price=interp1(x,V,0,'spline')
 > ```
 
-##### Theta
+#### Euler Theta
 Theta method is a generalisation of Euler, 
 $\theta=0$ <=> Explicit and  $\theta=1$ <=> Implicit 
 $$
@@ -393,7 +395,7 @@ solve this system:  $\text{diag}(A,B,C) V_t = \text{diag}(A_h,B_h,C_h) V_{t+1}$
 >Price=interp1(x,V,0,'spline')
 >```
 
-##### Crank-Nicholson
+#### Crank-Nicholson
 Theta schema with $\theta = 1/2$
 
 # Types
