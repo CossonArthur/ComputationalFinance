@@ -244,7 +244,7 @@ X_{n+1} = X_n + dX_{n+1}
 $$
 
 > [!code]- Code
-> ````matlab
+> ```matlab
 >%% Price an European Call Option
 >% Implicit Euler - logprice pde
 >% Black&Scholes Framework
@@ -260,7 +260,7 @@ $$
 >x=linspace(xmin,xmax,N+1)';
 >dx=(xmax-xmin)/N;  dt=T/M;
 >
->%% 3. Construction of the matrix
+> %.% 3. Construction of the matrix
 >A=-(r-sigma^2/2)/(2*dx)+sigma^2/(2*dx^2);
 >B=-1/dt-sigma^2/(dx^2)-r;
 >C=(r-sigma^2/2)/(2*dx)+sigma^2/(2*dx^2);
@@ -283,13 +283,9 @@ $$
 >figure
 >plot(S0*exp(x),V);
 >xlabel('Spot price'); title('Call Price');
->Price=interp1(x,V,0,'spline') 
->
->```
+>Price=interp1(x,V,0,'spline')
+> ```
 
-
-```R
-```
 
 ##### Theta
 Theta method is a generalisation of Euler, $\theta=0$ <=> Explicit and  $\theta=1$ <=> Implicit 
@@ -310,7 +306,7 @@ To do that a smart way is to go step by step backward in time:
 
 $$
 \begin{align}
-IV_t &= max(S_t-K,0)\\
+IV_t &= \max(S_t-K,0)\\
 IC_t &= E[e^{-r\Delta t}V_t|S_t] \approx \sum_k \alpha_{k,t} \cdot \psi_k(S_t)\\ 
 V_t &= \max(IV_t, IC_t)
 \end{align}
@@ -358,7 +354,7 @@ end
 
 
 
-# Different Options
+# Types
 ## European
 
 ### Definition

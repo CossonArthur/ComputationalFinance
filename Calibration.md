@@ -1,9 +1,8 @@
-# Black & scholes 
-optimise the Least Square difference between the model and the real value of the option
-
-
 
 The models parameters need to be calibrated to reflect the reality of the market 
+# Black & Scholes 
+optimise the Least Square difference between the model and the real value of the option.
+The fun function is returning the difference between the model and the market price 
 
 > [!code] Code
 >```matlab

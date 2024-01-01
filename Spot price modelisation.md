@@ -1,16 +1,12 @@
-
-# Modelisation
-
 # Diffusion
 
-
+## Black & Scholes
 
 # Jump diffusion
 Under $Q$, $E_0^Q[e^{-rT}S_T] = S_0$ which imply:
 $$
 	\mu=r -\frac{\sigma^2}{2}
 $$
-
 
 >[!notes]- Proof
 >
@@ -21,10 +17,7 @@ $$
 >$(\mu-r +\frac{\sigma^2}{2})=0$
 >$\mu=r -\frac{\sigma^2}{2}$
 
-
-
-
-# Merton 
+## Merton 
 Merton model the spot price as following the SDE:
 $$
 \begin{align*}
@@ -40,7 +33,6 @@ Params :
 $$
 \Psi(u) = -\frac{\sigma^2 u^2}{2} + \lambda \left(\exp\left(-\frac{\sigma_J^2 u^2}{2} + i\mu_J u\right) - 1\right)
 $$
-
 
 >[!notes]- Code
 >```matlab
@@ -80,10 +72,7 @@ $$
 >end
 >```
 
-
-
-
-# Kou
+## Kou
 Kou model the spot price as following the SDE:
 $$
 \begin{align*}
