@@ -124,10 +124,6 @@ $$ dX_t = \mu dt + \sigma dW_t $$
 ## Geometric Brownian Motion
 
 $$ dX_t = \mu X_tdt + \sigma X_tdW_t $$
-**Pros:**
-- Easy 
-**Cons:**
-- 
 
 ## Ornstein-Uhlenbeck (OU)
 

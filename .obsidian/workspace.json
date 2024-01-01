@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Probability theory.md",
+                "file": "Options.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Probability theory.md",
+                "file": "Options.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Probability theory.md",
+                "file": "Options.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Probability theory.md"
+                "file": "Options.md"
               }
             }
           },
@@ -143,9 +143,9 @@
   "lastOpenFiles": [
     "Spot price modelisation.md",
     "Options.md",
+    "Probability theory.md",
     "Calibration.md",
     "Black & Scholes.md",
-    "Probability theory.md",
     "Finite difference.md",
     "Monte Carlo.md",
     "Option pricing/European/Black & Scholes.md",

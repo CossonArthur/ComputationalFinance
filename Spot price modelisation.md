@@ -5,7 +5,11 @@
 $$
 dX_t = \mu X_tdt + \sigma X_tdW_t
 $$
-
+**Pros:**
+- Easy 
+**Cons:**
+- $S_t \sim N(r-\frac{\sigma^2}2), \frac{\sigma^2}2)$
+- 
 # Jump
 
 
