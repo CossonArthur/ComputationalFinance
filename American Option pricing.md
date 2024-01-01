@@ -53,3 +53,27 @@ end
 
 # PIDE
 
+## SOR algorithm
+SOR algorithm allow to solve a linear system, it will comes in handy for American pricing. As the solving will be modified.
+
+> [!code]-  Code
+> ```matlab
+> >function ynew=SOR(yold,C,b)
+>maxiter=50; tol=1e-4; omega=1.5;
+>N=length(C);
+>ynew=zeros(size(yold));
+>for j=1:maxiter
+>    for i=1:N
+>        z=(b(i)-C(i,1:i-1)*ynew(1:i-1)-C(i,i+1:N)*yold(i+1:N))/C(i,i);
+>        ynew(i)=yold(i)+omega*(z-yold(i));
+>    end
+>    if norm( yold-ynew,'inf') < tol 
+>        break
+>    else
+>        yold=ynew;
+>    end
+>end
+>end
+>```
+
+
