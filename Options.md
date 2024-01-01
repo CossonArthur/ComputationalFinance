@@ -195,27 +195,109 @@ For all the schema, $dW_t$ when discretise is $\sqrt{\Delta t} . N(0,1)$
 
 **First order** : $f'(x)≈\frac{f(x+\Delta x)−f(x-\Delta x)​}{2\Delta x}$
 **Second order** : $f''(x)≈\frac{f(x+\Delta x)+f(x-\Delta x)​-2f(x)​}{\Delta x^2}$
-### Euler
-#### Explicit
+#### Euler
+##### Explicit
+
 $$
 X_{n+1} = X_n + dX_{n}
 $$
-#### Implicit
 
+> [!code]- Code
+> ```matlab
+>%% Price an European Call Option
+>% Explicit Euler - logprice pde
+>% Black&Scholes Framework
+>
+> %% 1. Input
+>S0=1; K=1; r=0.01; T=1; sigma=0.4;
+>M=2000; % time
+>N=400; % logprice
+>%% 2. Grids
+>xmin=(r-sigma^2/2)*T-sigma*6*sqrt(T);
+>xmax=(r-sigma^2/2)*T+sigma*6*sqrt(T);
+>x=linspace(xmin,xmax,N+1);
+>dx=(xmax-xmin)/N;  dt=T/M;
+>%% 3. Backward-In-Time Procedure
+>% Maturity --> Payoff
+>V=max( S0*exp(x)-K, 0);
+>Vnew=zeros(size(V));
+>for j=M-1:-1:0
+>    Vnew(1)=0; % BC(xmin)
+>    for i=2:N
+>        Vnew(i)=V(i)+dt*(...
+>            (r-sigma^2/2)*(V(i+1)-V(i-1))/(2*dx)...
+>            +sigma^2/2*(V(i+1)-2*V(i)+V(i-1))/(dx^2)...
+>            -r*V(i));
+>    end
+>    Vnew(N+1)=S0*exp(xmax)-K*exp(-r*(T-j*dt));% BC(xmax)
+>    V=Vnew;
+>end
+>figure
+>plot(S0*exp(x),V);
+>xlabel('Spot price'); title('Call Price');
+>Price=interp1(x,V,0,'spline')
+>```
+##### Implicit
+Need to solve a linear system
 $$
 X_{n+1} = X_n + dX_{n+1}
 $$
 
 > [!code]- Code
-> Contents
+> ````matlab
+>%% Price an European Call Option
+>% Implicit Euler - logprice pde
+>% Black&Scholes Framework
+>
+>%% 1. Input
+>S0=1; K=1; r=0.01; T=1; sigma=0.4;
+>M=2000; % time
+>N=1000; % logprice
+>
+>%% 2. Grids
+>xmin=(r-sigma^2/2)*T-sigma*6*sqrt(T);
+>xmax=(r-sigma^2/2)*T+sigma*6*sqrt(T);
+>x=linspace(xmin,xmax,N+1)';
+>dx=(xmax-xmin)/N;  dt=T/M;
+>
+>%% 3. Construction of the matrix
+>A=-(r-sigma^2/2)/(2*dx)+sigma^2/(2*dx^2);
+>B=-1/dt-sigma^2/(dx^2)-r;
+>C=(r-sigma^2/2)/(2*dx)+sigma^2/(2*dx^2);
+>Matrix=spalloc(N+1,N+1,3*(N-1)+2);
+>Matrix(1,1)=1;
+>for i=2:N
+>    Matrix(i,[i-1 i i+1])=[A B C];
+>end
+>Matrix(N+1,N+1)=1;
+>
+>%% 4. Backward-In-Time Procedure
+>% Maturity --> Payoff
+>V=max( S0*exp(x)-K, 0);
+>BC=zeros(size(V));
+>for j=M-1:-1:0
+>    BC(end)=S0*exp(xmax)-K*exp(-r*(T-j*dt));
+>    rhs=-[0;V(2:end-1);0]/dt+BC;
+>    V=Matrix\rhs;
+>end
+>figure
+>plot(S0*exp(x),V);
+>xlabel('Spot price'); title('Call Price');
+>Price=interp1(x,V,0,'spline') 
+>
+>```
 
-#### Theta
+
+```R
+```
+
+##### Theta
 Theta method is a generalisation of Euler, $\theta=0$ <=> Explicit and  $\theta=1$ <=> Implicit 
 $$
 X_{n+1} = X_n + (1-\theta) \cdot dX_{n} + \theta \cdot dX_{n+1}
 $$
 
-### Milstein
+#### Milstein
 $$
 X_{n+1} = X_n + dX_n + \frac{1}{2} b(X_n, t_n) \frac{\partial b}{\partial x}(X_n, t_n) \left(\Delta W_n^2 - \Delta t\right)
 $$
