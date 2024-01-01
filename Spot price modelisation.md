@@ -2,7 +2,14 @@
 
 ## Black & Scholes
 
-# Jump diffusion
+$$
+dX_t = \mu X_tdt + \sigma X_tdW_t
+$$
+
+# Jump
+
+
+# Jump - Diffusion
 Under $Q$, $E_0^Q[e^{-rT}S_T] = S_0$ which imply:
 $$
 	\mu=r -\frac{\sigma^2}{2}
@@ -90,3 +97,7 @@ $$
 
 
 
+# Stochastic volatility model
+Those models don't assume $\sigma = \text{const}$. $\sigma(t)$ is a positive stochastic process, often mean reverting.
+
+*Mean reverting*: the process doesn't diverge but oscillate around a mean value. Modeled with $d\sigma_t = \alpha(\beta - \sigma_t)dt + ...\text{(stochastic valatility model)}$
