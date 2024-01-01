@@ -34,9 +34,14 @@ where:
 - $f(x_i)$ is the function that evaluates the outcome for the given sample.
 
 In the case of spot price simulation Euler method is used : 
-
-
-
+**Euler**
+$$
+X_{n+1} = X_n + dX_{n}
+$$
+**Milstein**
+$$
+X_{n+1} = X_n + dX_n + \frac{1}{2} b(X_n, t_n) \frac{\partial b}{\partial x}(X_n, t_n) \left(\Delta W_n^2 - \Delta t\right)
+$$
 ### Confidence Interval
 
 1. **Generate Samples:** Perform the Monte Carlo simulation to generate a large number of random samples.
