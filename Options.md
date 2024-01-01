@@ -333,7 +333,6 @@ $$
 >Price=interp1(x,V,0,'spline')
 > ```
 
-
 ##### Theta
 Theta method is a generalisation of Euler, 
 $\theta=0$ <=> Explicit and  $\theta=1$ <=> Implicit 
@@ -341,6 +340,54 @@ $$
 X_{n+1} = X_n + (1-\theta) \cdot dX_{n} + \theta \cdot dX_{n+1}
 $$
 solve this system:  $\text{diag}(A,B,C) V_t = \text{diag}(A_h,B_h,C_h) V_{t+1}$ 
+> [!code]- Code
+>```matlab
+>%% Price an European Call Option
+>% Theta Method - logprice pde
+>% Theta=1 --> Implicit Euler
+>% Theta=0.5 --> CrankNicholson
+>% Theta=0 --> Explicit Euler
+>% Black&Scholes Framework
+>
+>%% 1. Input
+>S0=1; K=1; r=0.01; T=1; sigma=0.4; Theta=0.5;
+>M=2000; % time
+>N=1000; % logprice
+>%% 2. Grids
+>xmin=(r-sigma^2/2)*T-sigma*6*sqrt(T);
+>xmax=(r-sigma^2/2)*T+sigma*6*sqrt(T);
+>x=linspace(xmin,xmax,N+1)';
+>dx=(xmax-xmin)/N;  dt=T/M;
+>%.% 3. Construction of the matrix
+>A=Theta*(-(r-sigma^2/2)/(2*dx)+sigma^2/(2*dx^2));
+>B=-1/dt+Theta*(-sigma^2/(dx^2)-r);
+>C=Theta*((r-sigma^2/2)/(2*dx)+sigma^2/(2*dx^2));
+>Ah=(Theta-1)*(-(r-sigma^2/2)/(2*dx)+sigma^2/(2*dx^2));
+>Bh=-1/dt+(Theta-1)*(-sigma^2/(dx^2)-r);
+>Ch=(Theta-1)*((r-sigma^2/2)/(2*dx)+sigma^2/(2*dx^2));
+>Matrix=spalloc(N+1,N+1,3*(N-1)+2);
+>Matrixh=spalloc(N+1,N+1,3*(N-1));
+>Matrix(1,1)=1;
+>for i=2:N
+>    Matrix(i,[i-1 i i+1])=[A B C];
+>    Matrixh(i,[i-1 i i+1])=[Ah Bh Ch];
+>end
+>Matrix(N+1,N+1)=1;
+>
+>%% 4. Backward-In-Time Procedure
+>% Maturity --> Payoff
+>V=max( S0*exp(x)-K, 0);
+>BC=zeros(size(V));
+>for j=M-1:-1:0
+>    BC(end)=S0*exp(xmax)-K*exp(-r*(T-j*dt));
+>    rhs=Matrixh*V+BC;
+>    V=Matrix\rhs;
+>end
+>figure
+>plot(S0*exp(x),V);
+>xlabel('Spot price'); title('Call Price');
+>Price=interp1(x,V,0,'spline')
+>```
 
 ##### Crank-Nicholson
 Theta schema with $\theta = 1/2$
@@ -364,7 +411,6 @@ $$
 > DiscPayoff=exp(-r*T)*max( S(:,end)-K, 0);
 >[Price,~,Price_CI]=normfit( DiscPayoff )
 >```
-
 
 >[!notes]- Black & Scholes
 >![Black & Scholes](Black%20&%20Scholes.md)
