@@ -51,7 +51,7 @@ end
 > ```
 
 
-# PIDE
+# PDE - B&S
 
 ## SOR algorithm
 SOR algorithm allow to solve a linear system, it will comes in handy for American pricing. As the solving will be modified.
