@@ -17,7 +17,7 @@ $$
 \end{align*}
 $$
 
-## Transormation
+## Transformation
 
 **Log price**: $x = \ln(\frac{S}{S_0})$
 
@@ -204,6 +204,15 @@ $$
 $$
 
 
+### Initial Conditions
+
+> [!proof]- Proof
+> ![](Images/Pasted%20image%2020240101195659.png)
+#### European
+
+TO BE DONNNNNNNENEEEEEE TODO 
+#### Barrier
+
 
 ### Difference method
 For all the schema, $dW_t$ when discretise is $\sqrt{\Delta t} . N(0,1)$
@@ -303,26 +312,13 @@ $$
 
 
 ##### Theta
-Theta method is a generalisation of Euler, $\theta=0$ <=> Explicit and  $\theta=1$ <=> Implicit 
+Theta method is a generalisation of Euler, 
+$\theta=0$ <=> Explicit and  $\theta=1$ <=> Implicit 
 $$
 X_{n+1} = X_n + (1-\theta) \cdot dX_{n} + \theta \cdot dX_{n+1}
 $$
-
-#### Milstein
-$$
-X_{n+1} = X_n + dX_n + \frac{1}{2} b(X_n, t_n) \frac{\partial b}{\partial x}(X_n, t_n) \left(\Delta W_n^2 - \Delta t\right)
-$$
-### Initial Conditions
-
-> [!proof]- Proof
-> ![](Images/Pasted%20image%2020240101195659.png)
-#### European
-
-
-#### Barrier
-
-
-
+##### Crank-Nicholson
+Theta schema with $\theta = 1/2$
 
 # Types
 ## European
