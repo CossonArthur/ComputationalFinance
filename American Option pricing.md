@@ -126,5 +126,3 @@ SOR algorithm allow to solve a linear system, it will comes in handy for America
 >xlabel('Spot price'); title('Call Price');
 >Price=interp1(S,V,S0,'spline')
 >```
-
-

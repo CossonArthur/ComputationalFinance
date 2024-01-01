@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "American Option pricing.md",
+                "file": "Options.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "American Option pricing.md",
+                "file": "Options.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "American Option pricing.md",
+                "file": "Options.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "American Option pricing.md"
+                "file": "Options.md"
               }
             }
           },
@@ -154,8 +154,8 @@
   },
   "active": "893ce524d6dc6f5a",
   "lastOpenFiles": [
-    "Calibration.md",
     "American Option pricing.md",
+    "Calibration.md",
     "Options.md",
     "Probability theory.md",
     "Images",

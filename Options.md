@@ -193,14 +193,18 @@ Transform this into a convolution -> Fourier -> mul -> inverse Fourier
 With M the discretisation in time, and N discretisation in strike
 
 ### PIDE
-#### Diffusion
+#### B&S
 $$
-\begin{align}
-&x = \ln(\frac{S}{S_0})\\
-&\frac{∂V}{∂t}​+(r-\frac{σ^2}2)\frac{∂V}{∂x}​​+ \frac{σ^2}2 \frac{∂^2V}{∂x^2}​​−rV=0\\
-&V = V(t,x)\\
-&V(T,x) = \max(S_0e^x-K,0)
-\end{align}
+
+$$
+With the transformation with the log price : $x = \ln(\frac{S}{S_0})$
+$$
+\frac{∂V}{∂t}​+(r-\frac{σ^2}2)\frac{∂V}{∂x}​​+ \frac{σ^2}2 \frac{∂^2V}{∂x^2}​​−rV=0
+$$
+
+#### Lévy process
+$$
+\frac{\partial V}{\partial t} + rS\frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} + \int_{-\infty}^{\infty} (V(S+z, t) - V(S, t)) \nu(dz) - rV = 0
 $$
 
 
