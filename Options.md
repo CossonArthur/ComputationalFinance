@@ -206,13 +206,33 @@ $$
 
 ### Bordery Conditions
 
+We truncate the dimension for the price has the probability is almost always 0/
+- $x_{\max} = (r-\frac{\sigma^2}2)T + 6 \sigma\sqrt{T}$
+- $x_{\min} = (r-\frac{\sigma^2}2)T - 6 \sigma\sqrt{T}$
+
 > [!proof]- Proof
 > ![](Images/Pasted%20image%2020240101195659.png)
 #### European
 
-**Calll**
-#### Barrier
+**Call**: 
+$$
+\begin{align}
+V(t, x_{\min}) &= 0\\
+V(t, x_{\max}) &= S_0 e^{x_{\max}} -Ke^{-r(T-t)}\\
+\end{align}
+$$
 
+**Put**: 
+$$
+\begin{align}
+V(t, x_{\min}) &= S_0 e^{x_{\min}} -Ke^{-r(T-t)}\\
+V(t, x_{\max}) &= 0\\
+\end{align}
+$$
+#### Barrier
+| | |
+| --- | --- |
+|  |  |
 
 ### Difference method
 For all the schema, $dW_t$ when discretise is $\sqrt{\Delta t} . N(0,1)$
