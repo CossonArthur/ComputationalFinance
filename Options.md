@@ -204,13 +204,13 @@ $$
 $$
 
 
-### Initial Conditions
+### Bordery Conditions
 
 > [!proof]- Proof
 > ![](Images/Pasted%20image%2020240101195659.png)
 #### European
 
-TO BE DONNNNNNNENEEEEEE TODO 
+**Calll**
 #### Barrier
 
 
@@ -317,6 +317,8 @@ $\theta=0$ <=> Explicit and  $\theta=1$ <=> Implicit
 $$
 X_{n+1} = X_n + (1-\theta) \cdot dX_{n} + \theta \cdot dX_{n+1}
 $$
+solve this system:  $\text{diag}(A,B,C) V_t = \text{diag}(A_h,B_h,C_h) V_{t+1}$ 
+
 ##### Crank-Nicholson
 Theta schema with $\theta = 1/2$
 
