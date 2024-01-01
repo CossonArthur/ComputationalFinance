@@ -124,15 +124,15 @@ $$ dX_t = \mu dt + \sigma dW_t $$
 ## Geometric Brownian Motion
 
 $$ dX_t = \mu X_tdt + \sigma X_tdW_t $$
+**Pros:**
+- Easy 
+**Cons:**
+- 
+
 ## Ornstein-Uhlenbeck (OU)
 
 $$ dX_t = \alpha (\mu-X_tdt) + \sigma X_tdW_t $$
-- $X_t$ is the value of the process at time t,
-- $\theta$ is the speed of mean reversion,
-- $\mu$ is the long-term mean or target value,
-- $\sigma$ is the volatility of the process,
-- $W_t$ is a Wiener process or Brownian motion at time t,
-- $dt$ is the differential of time.
+
 
 ## Heston
 $$
