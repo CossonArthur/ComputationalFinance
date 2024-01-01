@@ -33,6 +33,10 @@ where:
 - $x_i$ represents a random sample from the input distribution,
 - $f(x_i)$ is the function that evaluates the outcome for the given sample.
 
+In the case of spot price simulation Euler method is used : 
+
+
+
 ### Confidence Interval
 
 1. **Generate Samples:** Perform the Monte Carlo simulation to generate a large number of random samples.
