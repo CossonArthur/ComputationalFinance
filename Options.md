@@ -102,6 +102,7 @@ g=exp(-r*T)*max( f-K, 0);
 
 
 ## Carr-Madan
+### Simple option
 For stochastic process with jumps, there is no general formula to compute the option price, as the characteristic function of the underlying asset is not known. To compute the call option price  $C(k) = e^{−rT} E[(e^{rT+X_T} − e^k)^+]$, we use the Fourier Transform.
 $$
 \begin{align*}
@@ -164,12 +165,56 @@ $$
 >```
 
 
-## Convolution
+### Convolution
 Allow to compute the price of complex option like Barrier. As convolution in Fourier space is a multiplication. We calculate the Fourier transform, multiply, then take the inverse.
 $$
 C = E[e^{-rT}\Phi(S_T) \cdot 1_{\{x<D\}}]
 $$
 Transform this into a convolution -> Fourier -> mul -> inverse Fourier
+
+
+## Partial Intregal Differential Equation (PIDE)
+**M >> N**
+With M the discretisation in time, and N discretisation in strike
+
+### PDE
+#### B&S
+$$
+\begin{align}
+&x = \ln(\frac{S}{S_0})\\
+&\frac{∂V}{∂t}​+(r-\frac{σ^2}2)\frac{∂V}{∂x}​​+ \frac{σ^2}2 \frac{∂^2V}{∂x^2}​​−rV=0\\
+&V = V(t,x)\\
+&V(T,x) = \max(S_0e^x-K,0)
+\end{align}
+$$
+
+
+
+### Difference method
+For all the schema, $dW_t$ when discretise is $\sqrt{\Delta t} . N(0,1)$
+
+**First order** : $f'(x)≈\frac{f(x+\Delta x)−f(x-\Delta x)​}{2\Delta x}$
+**Second order** : $f''(x)≈\frac{f(x+\Delta x)+f(x-\Delta x)​-2f(x)​}{\Delta x^2}$
+### Euler
+#### Explicit
+$$
+X_{n+1} = X_n + dX_{n}
+$$
+#### Implicit
+
+$$
+X_{n+1} = X_n + dX_{n+1}
+$$
+#### Theta
+Theta method is a generalisation of Euler, $\theta=0$ <=> Explicit and  $\theta=1$ <=> Implicit 
+$$
+X_{n+1} = X_n + (1-\theta) \cdot dX_{n} + \theta \cdot dX_{n+1}
+$$
+
+### Milstein
+$$
+X_{n+1} = X_n + dX_n + \frac{1}{2} b(X_n, t_n) \frac{\partial b}{\partial x}(X_n, t_n) \left(\Delta W_n^2 - \Delta t\right)
+$$
 
 
 ## American price
@@ -224,10 +269,6 @@ for t=M-1:-1:1
 end
 [price,~,CI]=normfit(Call.*exp(-r*dt*Exercise_Time))
 > ```
-
-
-
-## Partial Intregal Differential Equation (PIDE)
 
 
 
