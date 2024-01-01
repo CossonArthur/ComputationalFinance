@@ -152,8 +152,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "893ce524d6dc6f5a",
+  "active": "f1ebcf96697bfafb",
   "lastOpenFiles": [
+    "Images",
+    "Images/Pasted image 20240101195659.png",
     "American Option pricing.md",
     "Spot price modelisation.md",
     "Options.md",
@@ -169,7 +171,6 @@
     "Processus/Countdown poisson process.md",
     "Processus/Brownian motion.md",
     "2023-12-27.md",
-    "Untitled",
     "2023-12-24.md",
     "Processus",
     "2023-12-23.md",

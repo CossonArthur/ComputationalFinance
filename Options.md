@@ -1,5 +1,4 @@
 # Pricing
-
 The price depends of the future value of the underlying asset, discounted by the return of the free rate asset:
 $$
 \begin{align*}
@@ -17,6 +16,13 @@ $$
 \text{Put} &: \Phi(S_T) = \max(K-S_t)
 \end{align*}
 $$
+
+## Transormation
+
+**Log price**: $x = \ln(\frac{S}{S_0})$
+
+**Log moneyness**: $x = \ln(\frac{S}{K})$
+
 
 ## Monte Carlo (MC)
 Monte Carlo simulation is a computational technique that uses random sampling to estimate random variable.
@@ -306,6 +312,17 @@ $$
 $$
 X_{n+1} = X_n + dX_n + \frac{1}{2} b(X_n, t_n) \frac{\partial b}{\partial x}(X_n, t_n) \left(\Delta W_n^2 - \Delta t\right)
 $$
+### Initial Conditions
+
+> [!proof]- Proof
+> ![](Images/Pasted%20image%2020240101195659.png)
+#### European
+
+
+#### Barrier
+
+
+
 
 # Types
 ## European
