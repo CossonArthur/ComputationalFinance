@@ -204,11 +204,11 @@ $$
 
 #### Lévy process
 $$
-\frac{\partial V}{\partial t} + rS\frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} + \int_{-\infty}^{\infty} (V(S+z, t) - V(S, t)-S(e^y-1)) \nu(dz) - rV = 0
+\frac{\partial V}{\partial t} + rS\frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} + \int_{-\infty}^{\infty} (V(S+z, t) - V(S, t)-S(e^y-1)\frac{\partial V}{\partial S}) \nu(dz) - rV = 0
 $$
 With the transformation with the log price : $x = \ln(\frac{S}{S_0})$
 $$
-\frac{\partial V}{\partial t} + (r - \frac{\sigma^2}{2})\frac{\partial V}{\partial x} + \frac{\sigma^2}{2}\frac{\partial^2 V}{\partial x^2} + \int_{-\infty}^{\infty} (V(x+z, t) - V(x, t)) \nu(dz) - rV = 0
+\frac{\partial V}{\partial t} + (r - \frac{\sigma^2}{2})\frac{\partial V}{\partial x} + \frac{\sigma^2}{2}\frac{\partial^2 V}{\partial x^2} + \int_{-\infty}^{\infty} (V(x+z, t) - V(x, t)-(e^y-1)\frac{\partial V}{\partial x}) \nu(dz) - rV = 0
 $$
 
 ### Bordery Conditions
