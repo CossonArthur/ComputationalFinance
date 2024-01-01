@@ -205,6 +205,10 @@ $$
 $$
 X_{n+1} = X_n + dX_{n+1}
 $$
+
+> [!code]- Code
+> Contents
+
 #### Theta
 Theta method is a generalisation of Euler, $\theta=0$ <=> Explicit and  $\theta=1$ <=> Implicit 
 $$
@@ -319,7 +323,7 @@ to be modified
 
 
 ## Asian 
-## Definition
+### Definition
 An Asian option is a type of financial derivative whose payoff is determined by the average price of the underlying asset over a specified period, rather than the spot price at a single point in time.
 - **Averaging Period:** The key feature of Asian options is the averaging mechanism, where the payoff is influenced by the average price of the underlying asset over a predetermined period, such as the entire option's life or a specific interval.
 - **Floating or Fixed Strike:** Asian options can have either a floating or fixed strike price. For a fixed strike Asian option, the average price is compared to the strike price. In a floating strike Asian option, the payoff is based on the difference between the average price and the spot price.
@@ -397,11 +401,10 @@ A barrier option is a type of financial derivative with a feature known as a bar
 - Advantages:** Barrier options are often used for risk management, allowing investors to tailor their exposure to specific price movements and market conditions.
 
 ### Discounted pay-off
-The pay-off is similar to an European Option, if the condition with the barrier is satisfied
-$$
-\Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
-$$
+The pay-off is can be European or Asian ....
+
 ### Pricing
+Here European Option is used
 > [!code]- MC code
 > Down-and-In (DI)
 > ```matlab
@@ -442,11 +445,9 @@ A double barrier option is a type of financial derivative with a feature known a
 - Advantages:** Double Barrier options are often used for risk management, allowing investors to tailor their exposure to specific price movements and market conditions.
 
 ### Discounted pay-off
-The pay-off is similar to an European Option, if the condition with the barrier is satisfied
-$$
-\Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
-$$
+The pay-off is can be European or Asian...
 ### Pricing
+Here European option is used
 > [!code]- MC code
 > Knock-In 
 > ```matlab
@@ -470,8 +471,9 @@ A basket option is a type of financial derivative that provides the holder with 
 - **Multiple Underlying Assets:** Unlike single-asset options, basket options are linked to a basket or portfolio of underlying assets, which can include stocks, commodities, or other financial instruments.
 - **Advantages:** Investors use basket options for risk management and to hedge against movements in a diversified portfolio, providing a more comprehensive approach to managing market exposure.
 ### Discounted pay-off
+The payoff of each asset depends of the chosen option type.
 $$
-\Phi(S_T) = e^{-rT}\cdot \max(S_T-K,0)
+\Phi(\{s_T^k| k\}) = e^{-rT}\cdot \sum_k w_k \Phi(S_T^k)
 $$
 ### Pricing
 > [!code]- MC code
