@@ -158,3 +158,11 @@ dy(t) &= \lambda( \eta - y(t)) dt +  \tilde \beta \sqrt{y(t)} d\hat W(t)\quad CI
 \end{align}
 $$
 
+### THR ( Fellman condition)
+$\theta < 2\lambda\eta$ => $p(y(t)<0) = 0$
+$\longrightarrow$ can use Euler schema
+
+$\theta > 2\lambda\eta$ => $p(y(t)=0) > 0$
+$\longrightarrow$ can't use Euler schema because of $\sqrt{y(t)}$
+
+
