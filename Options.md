@@ -189,9 +189,6 @@ Transform this into a convolution -> Fourier -> mul -> inverse Fourier
 
 
 ## Partial Intregal Differential Equation (PIDE)
-**M >> N**
-With M the discretisation in time, and N discretisation in strike
-
 ### PIDE
 #### B&S
 $$
@@ -279,6 +276,8 @@ For all the schema, $dW_t$ when discretise is $\sqrt{\Delta t} . N(0,1)$
 $$
 X_{n+1} = X_n + dX_{n}
 $$
+**Stability ** : *M >> N**
+With M the discretisation in time, and N discretisation in strike
 
 > [!code]- Code
 > ```matlab
