@@ -104,14 +104,6 @@ $$
 # Stochastic volatility model
 Those models don't assume $\sigma = \text{const}$. They assume $\sigma(t)$ is a positive stochastic process, often mean reverting. 
 
-$$
-\begin{align}
-dX_t &= \mu X_tdt + \sigma X_tdW_t\\
-d\sigma(t) &= \text{ ... }dt +\text{ ... } d\hat W_t\\
-d\hat W_t\cdot dW_t &= \rho \quad \text{correlation coef}
-\end{align}
-$$
-
 This model better fit the implied volatility in reality:
 - Stochastic volatility is used for **long maturity** 
 - Exponential Lévy ( jumps) is used for **short maturity** 
@@ -120,7 +112,7 @@ This model better fit the implied volatility in reality:
 - $\beta$: reversing mean
 - $\alpha$: speed of mean reversing
 
-## Without Jump
+## Diffusion
 
 
 $$
@@ -132,7 +124,7 @@ d\hat W_t\cdot dW_t &= \rho \quad & \text{correlation coef}
 \end{align}
 $$
 
-## Hull-White 
+### Hull-White 
 $$
 \begin{align}
 \rho &= 0\\
@@ -141,7 +133,7 @@ dy(t) &= C_1 y(t) dt + C_2 y(t) d\hat W(t)\quad GBM
 \end{align}
 $$
 
-## Scott
+### Scott
 $$
 \begin{align}
 \rho &= 0\\
@@ -149,7 +141,7 @@ f(t) &= \sqrt{y}\\
 dy(t) &= \lambda( \eta - y(t)) dt +  \tilde \beta d\hat W(t)\quad \text{Gaussian OU}
 \end{align}
 $$
-## Heston
+### Heston
 $$
 \begin{align}
 \rho &\neq  0\\
@@ -158,7 +150,7 @@ dy(t) &= \lambda( \eta - y(t)) dt +  \tilde \beta \sqrt{y(t)} d\hat W(t)\quad CI
 \end{align}
 $$
 
-### THR ( Fellman condition)
+**THR ( Fellman condition)**
 $\theta < 2\lambda\eta$ => $p(y(t)<0) = 0$
 $\longrightarrow$ can use Euler schema
 
@@ -166,3 +158,13 @@ $\theta > 2\lambda\eta$ => $p(y(t)=0) > 0$
 $\longrightarrow$ can't use Euler schema because of $\sqrt{y(t)}$
 
 
+## Jump - Diffusion
+
+$$
+\begin{align}
+dX_t &= \mu X_tdt + \sigma X_tdW_t +\sum_{k=1}^{N(t)}Y_i&\\
+\sigma_t &= f(y(t)) \quad & f \text{ positive function}\\
+dy(t) &= \lambda(\eta-y(t))dt + \text{ ... } d\hat W(t)&\\
+d\hat W_t\cdot dW_t &= \rho \quad & \text{correlation coef}
+\end{align}
+$$
