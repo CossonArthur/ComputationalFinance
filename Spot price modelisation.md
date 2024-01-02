@@ -14,6 +14,8 @@ $$
 
 
 # Jump - Diffusion
+
+## Finite activity
 Under $Q$, $E_0^Q[e^{-rT}S_T] = S_0$ which imply:
 $$
 	\mu=r -\frac{\sigma^2}{2}
@@ -28,7 +30,7 @@ $$
 >$(\mu-r +\frac{\sigma^2}{2})=0$
 >$\mu=r -\frac{\sigma^2}{2}$
 
-## Merton 
+### Merton 
 Merton model the spot price as following the SDE:
 $$
 \begin{align*}
@@ -83,7 +85,7 @@ $$
 >end
 >```
 
-## Kou
+### Kou
 Kou model the spot price as following the SDE:
 $$
 \begin{align*}
@@ -99,7 +101,17 @@ $$
 \Psi(u) = -\frac{\sigma^2 u^2}{2} + iu\lambda\left(\frac{p}{\lambda_+ - iu} - \frac{1-p}{\lambda_- + iu}\right)
 $$
 
+## Infinite Activity
 
+$$
+\begin{align}
+dX_t &= \theta \kappa dS_t + \sigma \sqrt{S_t} dW_t\\
+dS_t &\sim Gamma(\frac{dt}{\kappa})
+\end{align}
+$$
+Then the path is $X_t = \sum_i^t dXi$
+
+We can have also 
 
 # Stochastic volatility model
 Those models don't assume $\sigma = \text{const}$. They assume $\sigma(t)$ is a positive stochastic process, often mean reverting. 
