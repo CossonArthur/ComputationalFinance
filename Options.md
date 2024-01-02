@@ -230,25 +230,32 @@ We truncate the dimension for the price has the probability is almost always 0.
 > [!proof]- Proof
 > ![](Images/Pasted%20image%2020240101195659.png)
 #### European
+- B&S: $X_{\min}\ = \{x_{\min}\}$; $X_{\max}\ = \{x_{\max}\}$
+
+| | |
+| --- | --- |
+|  |  |
+- Lévy process: $X_{\min}\ = \{x | x < x_{\min}\}$; $X_{\max}\ = \{x | x > x_{\max}\}$
+
 
 **Call**: 
 $$
 \begin{align}
-V(t, x_{\min}) &= 0\\
-V(t, x_{\max}) &= S_0 e^{x_{\max}} -Ke^{-r(T-t)}\\
+V(t, x) &= 0, \quad &\forall x \in X_{\min}\\
+V(t, x) &= S_0 e^{x_{\max}} -Ke^{-r(T-t)}, &\quad \forall x \in X_{\max}\\
 \end{align}
 $$
 
 **Put**: 
 $$
 \begin{align}
-V(t, x_{\min}) &= S_0 e^{x_{\min}} -Ke^{-r(T-t)}\\
-V(t, x_{\max}) &= 0\\
+V(t, x) &= S_0 e^{x_{\min}} -Ke^{-r(T-t)}\\
+V(t, x) &= 0\\
 \end{align}
 $$
 #### Barrier
 
-|  | $x_{\min}$ | $x_{\max}$ | $V(t, x_{\min})$ | $V(t, x_{\max})$ |
+|  | $x_{\min}$ | $x_{\max}$ | $V(t, X_{\min})$ | $V(t, X_{\max})$ |
 | ---- | ---- | ---- | ---- | ---- |
 | Down&Out | $\ln(D/S_0)$ | same EU | 0 | same EU |
 | Up&Out | same EU | $\ln(U/S_0)$ | same EU | 0 |
