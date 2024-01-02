@@ -104,11 +104,20 @@ $$
 # Stochastic volatility model
 Those models don't assume $\sigma = \text{const}$. They assume $\sigma(t)$ is a positive stochastic process, often mean reverting.
 
+$$
+\begin{align}
+dX_t &= \mu X_tdt + \sigma X_tdW_t\\
+d\sigma(t) &= \text{ ... }dt +\text{ ... } d\hat W_t\\
+d\hat W_t\cdot dW_t &= \rho, \quad \text{correlation coef}
+\end{align}
+$$
+
 *Mean reverting*: the process doesn't diverge but oscillate around a mean value. Modeled with $d\sigma_t = \alpha(\beta - \sigma_t)dt + ...\text{(stochastic valatility model)}$
 - $\beta$: reversing mean
 - $\alpha$: speed of mean reversing
 
 ## Without Jump
+
 
 $$
 \begin{align}

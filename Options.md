@@ -221,10 +221,14 @@ $$
 > 
 > $A = - M\Delta x$
 > $B = M\Delta x$
-> $ \int_{A}^{B} (V(x+z, t) - V(x, t)-(e^z-1)\frac{\partial V}{\partial x}) \nu(dz) = \int_{A}^{B} V(x+z, t) - V(x, t) 
+> $$ 
+> \begin{align}
+> & \int_{A}^{B} (V(x+z, t) - V(x, t)-(e^z-1)\frac{\partial V}{\partial x}) \nu(dz) \\
+> &= \int_{A}^{B} V(x+z, t) - V(x, t) \int_{A}^{B} \nu (y)dy - \int_{A}^{B}(e^y-1)\nu (y)dy \cdot \frac{\partial V}{\partial x})\\
+> &= \int_{A}^{B} V(x+z, t) - V(x, t) \lambda - \alpha \frac{\partial V}{\partial x}
+> \end{align}
+> $$ 
 > 
-
-
 
 ### Bondery Conditions
 
