@@ -131,3 +131,11 @@ dy(t) &= \lambda(\eta-y(t))dt + \text{ ... } d\hat W(t)&\\
 d\hat W_t\cdot dW_t &= \rho \quad & \text{correlation coef}
 \end{align}
 $$
+
+## Hull-White 
+$$
+\begin{align}
+\rho &= 0\\
+y(t) &= 
+\end{align}
+$$
