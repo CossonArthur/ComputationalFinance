@@ -136,6 +136,25 @@ $$
 $$
 \begin{align}
 \rho &= 0\\
-y(t) &= 
+f(t) &= \sqrt{y}\\
+dy(t) &= C_1 y(t) dt + C_2 y(t) d\hat W(t)\quad GBM
 \end{align}
 $$
+
+## Scott
+$$
+\begin{align}
+\rho &= 0\\
+f(t) &= \sqrt{y}\\
+dy(t) &= \lambda( \eta - y(t)) dt +  \tilde \beta d\hat W(t)\quad \text{Gaussian OU}
+\end{align}
+$$
+## Heston
+$$
+\begin{align}
+\rho &\neq  0\\
+f(t) &= \sqrt{y}\\
+dy(t) &= \lambda( \eta - y(t)) dt +  \tilde \beta \sqrt{y(t)} d\hat W(t)\quad CIR
+\end{align}
+$$
+
