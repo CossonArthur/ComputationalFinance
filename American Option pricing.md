@@ -82,6 +82,10 @@ SOR algorithm allow to solve a linear system, it will comes in handy for America
 >end
 >```
 
+To price the American option, the algorithm is the same as in the Euler Implicit, with only difference the solving of the linear system. We need to use the Modified SOR algorithm. 
+$$
+y_{\text{new}} = \max(\text{payoff}_i, y)
+$$
 
 > [!code]- Code
 > ```matlab

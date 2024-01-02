@@ -221,7 +221,7 @@ $$
 > The integral is also truncated from $R \rightarrow [A,B]$, where A,B are chosen such that $\nu(y) < \eta, \forall y < A, y>B$
 > 
 
-### Bordery Conditions
+### Bondery Conditions
 
 We truncate the dimension for the price has the probability is almost always 0.
 - $x_{\max} = (r-\frac{\sigma^2}2)T + 6 \sigma\sqrt{T}$
@@ -230,13 +230,12 @@ We truncate the dimension for the price has the probability is almost always 0.
 > [!proof]- Proof
 > ![](Images/Pasted%20image%2020240101195659.png)
 #### European
-- B&S: $X_{\min}\ = \{x_{\min}\}$; $X_{\max}\ = \{x_{\max}\}$
+For the different process the bondery conditions apply on different space:
 
-| | |
-| --- | --- |
-|  |  |
-- Lévy process: $X_{\min}\ = \{x | x < x_{\min}\}$; $X_{\max}\ = \{x | x > x_{\max}\}$
-
+|  | $X_{\min}$ | $X_{\max}$ |
+| ---- | ---- | ---- |
+| B&S | $\{x_{\min}\}$ | $\{x_{\max}\}$ |
+| Lévy process | $\{x , x > x_{\min}\}$ | $\{x,x > x_{\max}\}$ |
 
 **Call**: 
 $$
