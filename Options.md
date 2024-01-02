@@ -212,7 +212,6 @@ $$
 $$
 
 
-
 > [!proof]- Discretisation
 > **Truncate**
 > $$
@@ -220,6 +219,10 @@ $$
 >$$
 > The integral is also truncated from $R \rightarrow [A,B]$, where A,B are chosen such that $\nu(y) < \eta, \forall y < A, y>B$
 > 
+> $A = - M\Delta x$
+> $B = M\Delta x$
+> 
+
 
 ### Bondery Conditions
 
