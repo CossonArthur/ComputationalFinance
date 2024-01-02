@@ -276,7 +276,7 @@ For all the schema, $dW_t$ when discretise is $\sqrt{\Delta t} . N(0,1)$
 $$
 X_{n+1} = X_n + dX_{n}
 $$
-**Stability ** : *M >> N**
+**Stability** : **M >> N**
 With M the discretisation in time, and N discretisation in strike
 
 > [!code]- Code
@@ -319,6 +319,7 @@ Need to solve a linear system
 $$
 X_{n+1} = X_n + dX_{n+1}
 $$
+**Stability** : Always stable
 
 > [!code]- Code
 > ```matlab
