@@ -623,9 +623,11 @@ $$
 $$
 ### Pricing
 > [!code]- MC code
-> Fixed Strike
 > ```matlab
-> DiscPayoff=exp(-r*T)*max( S(:,2)-K, 0);
->[Price,~,Price_CI]=normfit( DiscPayoff )
+> Z=mvnrnd( [0;0], [1 rho; rho 1],Nsim);
+Z1=Z(:,1); Z2=Z(:,2);
+S1T=S1_0*exp( (r-sigma1^2/2)*T+sigma1*sqrt(T)*Z1 );
+S2T=S2_0*exp( (r-sigma2^2/2)*T+sigma2*sqrt(T)*Z2 );
+DiscountedPayoff=exp(-r*T)*max( K-w1*S1T-w2*S2T, 0);
+[price,~ ,ci]=normfit(DiscountedPayoff)
 >```
->to be mdified
