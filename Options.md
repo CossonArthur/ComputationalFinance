@@ -221,7 +221,9 @@ $$
 > 
 > $A = - M\Delta x$
 > $B = M\Delta x$
+> $ \int_{A}^{B} (V(x+z, t) - V(x, t)-(e^z-1)\frac{\partial V}{\partial x}) \nu(dz) = \int_{A}^{B} V(x+z, t) - V(x, t) 
 > 
+
 
 
 ### Bondery Conditions
