@@ -54,9 +54,21 @@ end
 # PDE - B&S
 
 ## SOR algorithm
-SOR algorithm allow to solve a linear system, it will comes in handy for American pricing. As the solving will be modified.
+SOR algorithm allow to solve a linear system : $Ax=b$; $\omega \in [0,2]$
 
-> [!code]-  SOR algorithm code
+$$
+x_i^{(k+1)} = (1 - \omega) x_i^{(k)} + \omega \left( \frac{b_i - \sum_{j=1}^{i-1} a_{ij} x_j^{(k+1)} - \sum_{j=i+1}^{n} a_{ij} x_j^{(k)}}{a_{ii}} \right)
+$$
+$$
+\begin{align}
+&x_i^{(k+1)} \text{ is the updated value of the } i\text{-th component at iteration } k+1,} \\
+&b_i \text{ is the } i\text{-th component of the right-hand side vector,} \\
+&a_{ij} \text{ are the elements of the coefficient matrix,} \\
+&n \text{ is the size of the system.}
+\end{align}
+$$
+
+> [!code]-  modified SOR algorithm code
 > ```matlab
 > >function ynew=PSOR(yold,C,b,p)
 >maxiter=50; tol=1e-4; omega=1.5;
@@ -82,9 +94,10 @@ SOR algorithm allow to solve a linear system, it will comes in handy for America
 >end
 >```
 
+## Price
 To price the American option, the algorithm is the same as in the Euler Implicit, with only difference the solving of the linear system. We need to use the Modified SOR algorithm. 
 $$
-y_{\text{new}} = \max(\text{payoff}_i, y)
+y_{\text{new}} = \max(\text{payoff}, y_{\text{old}} + \omega(\sum))
 $$
 
 > [!code]- Code
