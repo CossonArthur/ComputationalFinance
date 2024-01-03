@@ -8,7 +8,7 @@ $$
 **Pros:**
 - Easy 
 **Cons:**
-- $S_t \sim N(r-\frac{\sigma^2}2), \frac{\sigma^2}2)$
+- $S_t \sim N(r-\frac{\sigma^2}2), \frac{\sigma^2}2)$, skew and kurtosis problem 
 - 
 # Jump
 

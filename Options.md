@@ -70,27 +70,24 @@ $$
 ### Performance 
 To improve the confidence of the estimation, there two levers :
 - **N increase**
-	The first one consist in increasing the number of samples in the distribution to better approximate the real value.
+The first one consist in increasing the number of samples in the distribution to better approximate the real value.
 
 - **Variance reduction**
-	The second one consist in decreasing the variance to better approximate the real value.
-	*Antithetic Variables*
-	Let's consider a scenario where you are simulating a random variable X. The antithetic variable X′ is generated to be **negatively correlated** with X. The average of X and X′ should remain constant.
+The second one consist in decreasing the variance to better approximate the real value.
+*Antithetic Variables*
+Let's consider a scenario where you are simulating a random variable X. The antithetic variable X′ is generated to be **negatively correlated** with X. The average of X and X′ should remain constant.
 
-	*Generate Pairs*
-	- For each random variable you're simulating, generate a pair of negatively correlated variables from the same distribution
-	- The correlation ensures that the average of the pairs remains constant.
-	*Calculate Average*
-	- For each pair, calculate the average of the two variables (X+X')/2
-	
-	Possibilities to get negatively correlated : 
-	- $X' = - X$
-	- if $X = F^{-1}(p)$ then $X' = F^{-1}(1-p)$
-	
-	*Control variable*
-	The idea is to use a function on which property can be computed through a known formula and which is close to the function that we want to approximate.
-	
-	Suppose we know the expected value of another functional f of X, such that f and g are one "close" to the other.	$$
+*Generate Pairs*
+- For each random variable you're simulating, generate a pair of negatively correlated variables from the same distribution. The correlation ensures that the average of the pairs remains constant.
+- For each pair, calculate the average of the two variables (X+X')/2
+Possibilities to get negatively correlated : 
+- $X' = - X$
+- if $X = F^{-1}(p)$ then $X' = F^{-1}(1-p)$
+
+*Control variable*
+The idea is to use a function on which property can be computed through a known formula and which is close to the function that we want to approximate.
+
+Suppose we know the expected value of another functional f of X, such that f and g are one "close" to the other.	$$
 	\begin{align}
 	\tilde \theta_{CV} &= \frac1n \sum_{i=1}^n g(Xi ) + \alpha (f(X_i) - E[f(X)])\\
 	\alpha &= -\frac{\text{Cov}(g(X),f(X))}{\text{Var}(f(X))}
