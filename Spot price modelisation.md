@@ -111,7 +111,8 @@ dS_t &\sim Gamma(\frac{dt}{\kappa})
 $$
 Then the path is $X_t = \sum_i^t dXi$
 
-We can have also 
+We can have also dS following inverse Gamma distribution. 
+To simulate: $\frac1{Gamma(dt/\kappa)}$
 
 # Stochastic volatility model
 Those models don't assume $\sigma = \text{const}$. They assume $\sigma(t)$ is a positive stochastic process, often mean reverting. 
@@ -174,9 +175,12 @@ $\longrightarrow$ can't use Euler schema because of $\sqrt{y(t)}$
 
 $$
 \begin{align}
-dX_t &= \mu X_tdt + \sigma X_tdW_t +\sum_{k=1}^{N(t)}Y_i&\\
+dX_t &= \mu X_tdt + \sigma X_tdW_t +S_t dZ_t&\\
 \sigma_t &= f(y(t)) \quad & f \text{ positive function}\\
 dy(t) &= \lambda(\eta-y(t))dt + \text{ ... } d\hat W(t)&\\
-d\hat W_t\cdot dW_t &= \rho \quad & \text{correlation coef}
+d\hat W_t\cdot dW_t &= \rho dt \quad & \text{correlation coef}\\
+dZ_t &\sim Compound Poisson(\lambda)
 \end{align}
 $$
+
+dZ_t : the lognormal  jump-price is $\sim N(log(1+K)- \delta^2/2,delta^2)
