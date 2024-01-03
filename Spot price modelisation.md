@@ -181,4 +181,4 @@ dZ_t &\sim Compound Poisson(\lambda)
 \end{align}
 $$
 
-dZ_t : the lognormal  jump-price is $\sim N(log(1+K)- \delta^2/2,delta^2)
+$dZ_t$ : the lognormal  jump-price is $\sim N(log(1+K)- \delta^2/2,delta^2)$

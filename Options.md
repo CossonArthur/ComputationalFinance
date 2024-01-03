@@ -84,6 +84,16 @@ Possibilities to get negatively correlated :
 - $X' = - X$
 - if $X = F^{-1}(p)$ then $X' = F^{-1}(1-p)$
 
+
+> [!code]- Code
+> ```matlab
+> [Path,PathAV]=Asset(S0,r,sigma,T,Ndates,Nsim);
+>% AV average
+>Path = (Path + PathAV)/2;
+>```
+
+
+
 *Control variable*
 The idea is to use a function on which property can be computed through a known formula and which is close to the function that we want to approximate.
 
