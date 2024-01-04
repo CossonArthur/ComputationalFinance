@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "American Option pricing.md",
-                "mode": "source",
+                "file": "Options.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "American Option pricing.md",
+                "file": "Options.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "American Option pricing.md",
+                "file": "Options.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "American Option pricing.md"
+                "file": "Options.md"
               }
             }
           },
@@ -141,9 +141,9 @@
   },
   "active": "772302a7a6c0a8a7",
   "lastOpenFiles": [
+    "American Option pricing.md",
     "Options.md",
     "Spot price modelisation.md",
-    "American Option pricing.md",
     "Calibration.md",
     "Probability theory.md",
     "Images",
