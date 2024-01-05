@@ -9,7 +9,7 @@ $$
 - Easy 
 **Cons:**
 - $S_t \sim N(r-\frac{\sigma^2}2), \frac{\sigma^2}2)$
-- 
+- no smile in implied volatility, const
 # Jump
 
 
