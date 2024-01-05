@@ -8,11 +8,8 @@ $$
 **Pros:**
 - Easy 
 **Cons:**
-- $S_t \sim N(r-\frac{\sigma^2}2), \frac{\sigma^2}2)$
 - no smile in implied volatility, const
-# Jump
 - $S_t \sim N(r-\frac{\sigma^2}2), \frac{\sigma^2}2)$, skew and kurtosis problem 
-
 
 # Jump 
 
@@ -103,7 +100,7 @@ $$
 $$
 
 ## Infinite Activity
-
+### VG
 $$
 \begin{align}
 dX_t &= \theta \kappa dS_t + \sigma \sqrt{S_t} dW_t\\
@@ -111,9 +108,22 @@ dS_t &\sim Gamma(\frac{dt}{\kappa})
 \end{align}
 $$
 Then the path is $X_t = \sum_i^t dXi$
+```matlab
+icdf('Gamma', rand, params);
+```
 
-We can have also dS following inverse Gamma distribution. 
-To simulate: $\frac1{Gamma(dt/\kappa)}$
+### NIG
+
+$$
+\begin{align}
+dX_t &= \theta \kappa dS_t + \sigma \sqrt{S_t} dW_t\\
+dS_t &\sim Inverse Gaussian(\frac{dt}{\kappa})
+\end{align}
+$$
+Then the path is $X_t = \sum_i^t dXi$
+```matlab
+icdf('InverseGaussian', rand, params);
+```
 
 # Stochastic volatility model
 Those models don't assume $\sigma = \text{const}$. They assume $\sigma(t)$ is a positive stochastic process, often mean reverting. 

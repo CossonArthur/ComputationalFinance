@@ -54,7 +54,7 @@ $$
 We call l(u) the Laplace exponent of S. Since process S is increasing it can
 be interpreted as a “time deformation” and used to “time change” other Lévy processes as shown by the following theorem.
 
-Let $X_t$​ be a Lévy process  ($\gamma$, A,$\nu$), and let $S_t$ be a non-decreasing Lévy subordinator (0,$\rho$,$b$). The subordinated Lévy process $Y_t$ is defined as:
+Let $X_t$​ be a Lévy process  ($\gamma$, A,$\nu$), and let $S_t$ be a non-decreasing Lévy subordinator ($\rho$,0,$b$). The subordinated Lévy process $Y_t$ is defined as:
 $$ 
 \begin{align*}
 Y_t &= X_{S_t} \\
