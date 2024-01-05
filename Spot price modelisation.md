@@ -125,6 +125,11 @@ Then the path is $X_t = \sum_i^t dXi$
 icdf('InverseGaussian', rand, params);
 ```
 
+### Extended 
+If we include a Brownian Motion, $\hat \sigma$. Then ($\gamma$, $\hat \sigma$, $\nu$) is the new Lévy process.
+--> Actually useless as Infinite jump approximate a Brownian Motion.
+
+
 # Stochastic volatility model
 Those models don't assume $\sigma = \text{const}$. They assume $\sigma(t)$ is a positive stochastic process, often mean reverting. 
 
