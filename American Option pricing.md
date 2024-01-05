@@ -59,30 +59,30 @@ $$
 x_i^{(k+1)} = (1 - \omega) x_i^{(k)} + \omega \left( \frac{b_i - \sum_{j=1}^{i-1} a_{ij} x_j^{(k+1)} - \sum_{j=i+1}^{n} a_{ij} x_j^{(k)}}{a_{ii}} \right)
 $$
 
-> [!code]- SOR algorithm code
+> [!code]-  SOR algorithm code
 > ```matlab
-> >function ynew=PSOR(yold,C,b)
->maxiter=50; tol=1e-4; omega=1.5;
->N=length(C);
->ynew=zeros(size(yold));
->for j=1:maxiter
->    for i=1:N
->         if i==1
->            z=(b(i)-C(i,i+1)*yold(i+1))/C(i,i);
->        elseif i==N
->            z=(b(i)-C(i,i-1)*ynew(i-1))/C(i,i);
->        else
->            z=(b(i)-C(i,i-1)*ynew(i-1)-C(i,i+1)*yold(i+1))/C(i,i);
->        end
->        yold(i)+omega*(z-yold(i));
->    end
->    if norm( yold-ynew,'inf') < tol 
->        break
->    else
->        yold=ynew;
->    end
->end
->end
+>function ynew = PSOR(yold,A,b)
+tol = 1e-4;Nmax = 50;
+omega = 1.5;
+>
+ynew = zeros(size(yold));
+for k = 1:Nmax
+    ynew = (1-omega)*yold;
+    for i = 1:length(yold)
+        for j = 1:(length(yold))
+            if(j<i)
+                ynew(i) = ynew(i) + omega/A(i,i) * (b(i) - A(i,j)*ynew(j));
+            else
+                ynew(i) = ynew(i) + omega/A(i,i) * (b(i) - A(i,j)*yold(j));
+            end
+        end
+    end
+    if(norm(ynew-yold, 'inf') > tol)
+        yold= ynew;
+    else
+        break
+    end
+end
 >```
 
 ## Price
@@ -93,28 +93,29 @@ $$
 
 > [!code]-  modified SOR algorithm code
 > ```matlab
-> >function ynew=PSOR(yold,C,b,p)
->maxiter=50; tol=1e-4; omega=1.5;
->N=length(C);
->ynew=zeros(size(yold));
->for j=1:maxiter
->    for i=1:N
->         if i==1
->            z=(b(i)-C(i,i+1)*yold(i+1))/C(i,i);
->        elseif i==N
->            z=(b(i)-C(i,i-1)*ynew(i-1))/C(i,i);
->        else
->            z=(b(i)-C(i,i-1)*ynew(i-1)-C(i,i+1)*yold(i+1))/C(i,i);
->        end
->        ynew(i)=max(p(i),yold(i)+omega*(z-yold(i)));
->    end
->    if norm( yold-ynew,'inf') < tol 
->        break
->    else
->        yold=ynew;
->    end
->end
->end
+>function ynew = PSOR(yold,A,b,payoffatT)
+tol = 1e-4;Nmax = 50;
+omega = 1.5;
+>
+ynew = zeros(size(yold));
+for k = 1:Nmax
+    xnew = (1-omega)*yold;
+    for i = 1:length(yold)
+        for j = 1:(length(yold))
+            if(j<i)
+                xnew(i) = xnew(i) + omega/A(i,i) * (b(i) - A(i,j)*ynew(j));
+            else
+                xnew(i) = xnew(i) + omega/A(i,i) * (b(i) - A(i,j)*yold(j));
+            end
+        end
+        ynew(i) = max(xnew(i),payoffatT(i));
+    end
+    if(norm(ynew-yold, 'inf') > tol)
+        yold= ynew;
+    else
+        break
+    end
+end
 >```
 
 > [!code]- Code
