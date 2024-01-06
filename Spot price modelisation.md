@@ -213,14 +213,17 @@ $\longrightarrow$ can't use Euler schema because of $\sqrt{y(t)}$
 
 ## Jump - Diffusion
 
+### Bates
 $$
 \begin{align}
-dX_t &= \mu X_tdt + \sigma X_tdW_t +S_t dZ_t&\\
-\sigma_t &= f(y(t)) \quad & f \text{ positive function}\\
-dy(t) &= \lambda(\eta-y(t))dt + \text{ ... } d\hat W(t)&\\
+dX_t &= (\mu-\frac12 X_t) dt + \sigma X_tdW_t +S_t dZ_t&\\
+\sigma_t &= \sqrt{y(t)} \quad & f \text{ positive function}\\
+dV_t &= \lambda(\eta-y(t))dt + \text{ ... } d\hat W(t)&\\
 d\hat W_t\cdot dW_t &= \rho dt \quad & \text{correlation coef}\\
 dZ_t &\sim Compound Poisson(\lambda)
 \end{align}
 $$
-
 $dZ_t$ : the lognormal  jump-price is $\sim N(log(1+K)- \delta^2/2,delta^2)$
+
+
+### BNS (Barndorff-Nielsen-Shepard)
