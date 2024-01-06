@@ -2,13 +2,11 @@
 # Q assumption
 Q imply that the discounted asset price is a martingale.
 --> Under $Q$ => $E_0^Q[e^{-rT}S_T] = S_0$ 
-
 ## General case 
 the drift term $\mu dt$ in the SDE
 $$
 	\mu=r -\psi_X(-i)
 $$
-
 >[!notes]- Proof
 >
 >$E^Q[e^{-rT}S_T] = S_0$
@@ -18,13 +16,10 @@ $$
 >$\mu=r -\psi_X(-i)$
 >
 >because $E[e^{X_T}] = \phi_{X_T}(-i) = e^{T\cdot \psi_X(-i)}$
-
-
 ## GBM
 $$
 	\mu=r -\frac{\sigma^2}{2}
 $$
-
 >[!notes]- Proof
 >
 >$E^Q[e^{-rT}S_T] = S_0$
@@ -33,8 +28,6 @@ $$
 >$e^{(\mu-r) T} \cdot e^{\frac{\sigma^2}{2} T}] = 1$
 >$(\mu-r +\frac{\sigma^2}{2})=0$
 >$\mu=r -\frac{\sigma^2}{2}$
-
-
 
 # Diffusion
 
@@ -51,7 +44,7 @@ $$
 
 # Jump 
 
-## Finite activity
+## Finite activity 
 ### Merton 
 Merton model the spot price as following the SDE:
 $$
@@ -84,26 +77,22 @@ $$
 >Ndt=icdf('Poisson',rand(Nsim,M),lambda*dt);
 >% Sample Continuous Component
 >Z=randn(Nsim,M);
->X=zeros(Nsim,M+1); XAV=zeros(Nsim,M+1);
+>X=zeros(Nsim,M+1);
 >for i=1:M % time loop
 >    % continuous part
 >    X(:,i+1)=X(:,i)+drift*dt+sigma*sqrt(dt)*Z(:,i);
->    XAV(:,i+1)=XAV(:,i)+drift*dt-sigma*sqrt(dt)*Z(:,i);
 >    for j=1:Nsim % simulation loop
 >        if Ndt(j,i)>0
 >            % sample jumps
 >            z=randn(Ndt(j,i),1);
 >            Y=sum( muJ+sigmaJ*z );
->            YAV=sum( muJ-sigmaJ*z );
 >            % add jumps
 >            X(j,i+1)=X(j,i+1)+Y;
->            XAV(j,i+1)=XAV(j,i+1)+YAV;
 >        end
 >    end
 >end
 >
 >S=S0*exp(X);
->SAV=S0*exp(XAV);
 >end
 >```
 
@@ -113,7 +102,7 @@ $$
 \begin{align*}
 dX_t &= \mu_1 X_tdt + \sigma X_tdW_t + \sum^{N(t)}_{i=1} Yi \\
 \text{where,}\\
-N(t) &\sim Poisson(\lambda*t)\\
+N(t) &\sim \text{double exp}(\lambda*t)\\
 \end{align*}
 $$
 
@@ -122,6 +111,47 @@ Params :
 $$
 \Psi(u) = -\frac{\sigma^2 u^2}{2} + iu\lambda\left(\frac{p}{\lambda_+ - iu} - \frac{1-p}{\lambda_- + iu}\right)
 $$
+
+>[!notes]- Code
+>```matlab
+function Path=AssetKou(params,S0,r,T,Ndates,Nsim)
+>
+sigma=params(1);
+lambda=params(2);
+p=params(3);
+lambdap=params(4);
+lambdam=params(5);
+psi=@(u) -sigma^2*u^2/2+1i*u*lambda*(p/(lambdap-1i*u)-(1-p)/(lambdam+1i*u));
+drift = r - psi(-1i);
+dt=T/Ndates;
+>
+X=zeros(Nsim,Ndates+1);
+temp=randn(Nsim,Ndates);
+Nt=icdf('Poisson', rand(Nsim,Ndates), lambda*dt);
+>
+for i=1:Ndates
+    X(:,i+1) = X(:,i) + drift*dt + simga * sqrt(dt) * temp(:,i);
+    for j =1:Nsim
+        if(Nt(j,i) > 0)
+            Jpn = rand(N(j,i),1);
+            Jp=sum( Jpn<p );
+            Jn=Ndt(j,i)-Jp;
+            % sample positive jump sizes
+            Y=0;
+            if(Jp >0)
+                Y = icdf('Exp',rand(Jp,1), 1/lambdap);
+            end
+            if(Jn>0)
+                Y = Y - icdf('Exp',rand(Jn,1), 1/lambdam);
+            end
+            X(:,i+1) = X(:,i+1) + Y;
+        end
+    end
+    Path = S0*exp(X);
+end
+end
+>```
+
 
 ## Infinite Activity
 ### VG
