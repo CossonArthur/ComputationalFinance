@@ -42,6 +42,23 @@ $$
 - no smile in implied volatility, const
 - $S_t \sim N(r-\frac{\sigma^2}2), \frac{\sigma^2}2)$, skew and kurtosis problem 
 
+
+>[!notes]- Code
+>```matlab
+function Path=AssetB_S(S0,r,sigma,T,Ndates,Nsim)
+>
+dt=T/Ndates;
+drift = r - sigma^2/2;
+>  
+X=zeros(Nsim,Ndates+1);
+temp=randn(Nsim,Ndates);
+ > 
+for i=1:Ndates
+    X(:,i+1) = X(:,i) + drift*dt + simga * sqrt(dt) * temp(:,i);
+end
+Path = S0*exp(X);
+end
+>```
 # Jump 
 
 ## Finite activity 
@@ -64,7 +81,7 @@ $$
 
 >[!notes]- Code
 >```matlab
->function [S,SAV]=Asset_Merton_AV(Nsim,T,params,M,S0,r)
+>function S=Asset_Merton(Nsim,T,params,M,S0,r)
 >% under Q for Exponential(X)
 >dt=T/M;
 >sigma=params(1);
@@ -161,11 +178,31 @@ dX_t &= \theta \kappa dS_t + \sigma \sqrt{S_t} dW_t\\
 dS_t &\sim Gamma(\frac{dt}{\kappa})
 \end{align}
 $$
-Then the path is $X_t = \sum_i^t dXi$
-```matlab
-icdf('Gamma', rand, params);
-```
 
+>[!notes]- Code
+>```matlab
+>function Path=AssetVG(params, S0,T,Ndates,Nsim)
+>  
+k = params(1);
+theta = params(2);
+r = params(3);
+sigmaVG = params(4);
+sigma = params(5);   % sigma != 0 (Extended)
+>
+psi = @(u) -log(1 + u^2*sigmaVG^2*k/2 -1i*theta*u*k)/k;
+drift = r - psi(-1i);
+dt=T/Ndates;
+> 
+X=zeros(Nsim,Ndates+1);
+temp=randn(Nsim,Ndates);
+tempNG=randn(Nsim,Ndates);
+dS = k * icdf('Gamma', rand(Nsim, Ndates), dt/k,1);
+for i=1:Ndates
+    X(:,i+1) = X(:,i) + drift*dt + sigma*sqrt(dt).*temp(:,i) + theta* dS(:,i) + sigmaVG.*sqrt(dS(:,i)).*tempNG(:,i);
+end
+Path = S0*exp(X);
+end
+>```
 ### NIG
 
 $$
@@ -174,10 +211,30 @@ dX_t &= \theta \kappa dS_t + \sigma \sqrt{S_t} dW_t\\
 dS_t &\sim Inverse Gaussian(\frac{dt}{\kappa})
 \end{align}
 $$
-Then the path is $X_t = \sum_i^t dXi$
-```matlab
-icdf('InverseGaussian', rand, params);
-```
+>[!notes]- Code
+>```matlab
+function Path=AssetNIG(params, S0,T,Ndates,Nsim)
+>  
+k = params(1);
+theta = params(2);
+r = params(3);
+sigmaNIG = params(4);
+sigma = params(5);   % sigma != 0 (Extended)
+>  
+psi = @(u) 1/k -1/k * sqrt(1+ u^2*sigmaNIG^2*k-2i*theta*u*k);
+drift = r - psi(-1i);
+dt=T/Ndates;
+>  
+X=zeros(Nsim,Ndates+1);
+temp=randn(Nsim,Ndates);
+tempNG=randn(Nsim,Ndates);
+dS = k * icdf('InverseGaussian', rand(Nsim, Ndates), dt/k,1);
+for i=1:Ndates
+    X(:,i+1) = X(:,i) + drift*dt + sigma*sqrt(dt).*temp(:,i) + theta* dS(:,i) + sigmaNIG.*sqrt(dS(:,i)).*tempNG(:,i);
+end
+Path = S0*exp(X);
+end
+>```
 
 ### Extended 
 If we include a Brownian Motion, $\hat \sigma$. Then ($\gamma$, $\hat \sigma$, $\nu$) is the new Lévy process.
