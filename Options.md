@@ -128,7 +128,7 @@ g=exp(-r*T)*max( f-K, 0);
 For stochastic process with jumps, there is no general formula to compute the option price, as the characteristic function of the underlying asset is not known. To compute the call option price  $C(k) = e^{−rT} E[(e^{rT+X_T} − e^k)^+]$, we use the Fourier Transform.
 $$
 \begin{align*}
-C(K) &= \max(1 - e^{k-rT},0) + \frac{1}{\pi} \int_{0}^{\infty} \mathrm{Re}\left( e^{-ik\cdot u} \frac{e^{-irT\cdot u} (\phi_T(u-i) - 1)}{iu(1+iu)} \right)du \\
+C(k) &= \max(1 - e^{k-rT},0) + \frac{1}{\pi} \int_{0}^{\infty} \mathrm{Re}\left( e^{-ik\cdot u} \frac{e^{-irT\cdot u} (\phi_T(u-i) - 1)}{iu(1+iu)} \right)du \\
 \text{where:} \\
 & C(k) \text{ is the call option price}, \\
 & k \text{ is the option strike price}, \\
