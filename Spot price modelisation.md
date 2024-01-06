@@ -216,9 +216,9 @@ $\longrightarrow$ can't use Euler schema because of $\sqrt{y(t)}$
 ### Bates
 $$
 \begin{align}
-dX_t &= (\mu-\frac12 X_t) dt + \sigma X_tdW_t +S_t dZ_t&\\
+dX_t &= (\mu-\frac12 X_t) dt + \sigma X_t dW_t + dZ_t&\\
 \sigma_t &= \sqrt{y(t)} \quad & f \text{ positive function}\\
-dV_t &= \lambda(\eta-y(t))dt + \text{ ... } d\hat W(t)&\\
+dV_t &= \lambda(\eta-V_t)dt + \theta \sqrt{V_t} d\hat W(t)&\\
 d\hat W_t\cdot dW_t &= \rho dt \quad & \text{correlation coef}\\
 dZ_t &\sim Compound Poisson(\lambda)
 \end{align}
