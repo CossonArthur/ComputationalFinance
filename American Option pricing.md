@@ -62,7 +62,7 @@ $$
 > [!code]-  SOR algorithm code
 > ```matlab
 function ynew = PSOR(yold,A,b)
-tol = 1e-4; Nmax = 50; omega = 1.5;
+tol = 1e-6; Nmax = 100; omega = 1.5;
 ynew = zeros(size(yold));
 for k = 1:Nmax
 for i = 1:length(yold)
@@ -92,7 +92,7 @@ $$
 > [!code]-  modified SOR algorithm code
 > ```matlab
 function ynew = PSOR(yold,A,b,payoffatT)
-tol = 1e-4; Nmax = 50; omega = 1.5;
+tol = 1e-6; Nmax = 100; omega = 1.5;
 ynew = zeros(size(yold));
 for k = 1:Nmax
 for i = 1:length(yold)
