@@ -61,27 +61,25 @@ $$
 
 > [!code]-  SOR algorithm code
 > ```matlab
->function ynew = PSOR(yold,A,b)
-tol = 1e-4;Nmax = 50;
-omega = 1.5;
->
+function ynew = PSOR(yold,A,b)
+tol = 1e-4; Nmax = 50; omega = 1.5;
 ynew = zeros(size(yold));
 for k = 1:Nmax
-    ynew = (1-omega)*yold;
-    for i = 1:length(yold)
-        for j = 1:(length(yold))
-            if(j<i)
-                ynew(i) = ynew(i) + omega/A(i,i) * (b(i) - A(i,j)*ynew(j));
-            else
-                ynew(i) = ynew(i) + omega/A(i,i) * (b(i) - A(i,j)*yold(j));
-            end
-        end
-    end
-    if(norm(ynew-yold, 'inf') > tol)
-        yold= ynew;
-    else
-        break
-    end
+for i = 1:length(yold)
+if(i==1)
+z = (b(i) - A(i,i+1)*yold(i+1))/A(i,i);
+elseif (i==length(yold))
+z = (b(i) - A(i,i-1)*ynew(i-1))/A(i,i);
+else
+z = (b(i) - A(i,i-1)*ynew(i-1) - A(i,i+1)*yold(i+1))/A(i,i);
+end
+ynew(i) =yold(i) + omega*(z-yold(i));
+end
+if(norm(ynew-yold, 'inf') < tol)
+break
+else
+yold=ynew;
+end
 end
 >```
 
@@ -93,28 +91,25 @@ $$
 
 > [!code]-  modified SOR algorithm code
 > ```matlab
->function ynew = PSOR(yold,A,b,payoffatT)
-tol = 1e-4;Nmax = 50;
-omega = 1.5;
->
+function ynew = PSOR(yold,A,b,payoffatT)
+tol = 1e-4; Nmax = 50; omega = 1.5;
 ynew = zeros(size(yold));
 for k = 1:Nmax
-    xnew = (1-omega)*yold;
-    for i = 1:length(yold)
-        for j = 1:(length(yold))
-            if(j<i)
-                xnew(i) = xnew(i) + omega/A(i,i) * (b(i) - A(i,j)*ynew(j));
-            else
-                xnew(i) = xnew(i) + omega/A(i,i) * (b(i) - A(i,j)*yold(j));
-            end
-        end
-        ynew(i) = max(xnew(i),payoffatT(i));
-    end
-    if(norm(ynew-yold, 'inf') > tol)
-        yold= ynew;
-    else
-        break
-    end
+for i = 1:length(yold)
+if(i==1)
+z = (b(i) - A(i,i+1)*yold(i+1))/A(i,i);
+elseif (i==length(yold))
+z = (b(i) - A(i,i-1)*ynew(i-1))/A(i,i);
+else
+z = (b(i) - A(i,i-1)*ynew(i-1) - A(i,i+1)*yold(i+1))/A(i,i);
+end
+ynew(i) = max(payoffatT(i), yold(i) + omega*(z-yold(i)));
+end
+if(norm(ynew-yold, 'inf') < tol)
+break
+else
+yold=ynew;
+end
 end
 >```
 
