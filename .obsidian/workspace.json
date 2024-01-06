@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "carr",
+                "query": "under Q",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -127,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -139,7 +140,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d946cdad26aebc57",
+  "active": "645ffab9937535da",
   "lastOpenFiles": [
     "Spot price modelisation.md",
     "Probability theory.md",

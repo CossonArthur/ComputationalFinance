@@ -1,3 +1,41 @@
+
+# Q assumption
+Q imply that the discounted asset price is a martingale.
+--> Under $Q$ => $E_0^Q[e^{-rT}S_T] = S_0$ 
+
+## General case 
+the drift term $\mu dt$ in the SDE
+$$
+	\mu=r -\psi_X(-i)
+$$
+
+>[!notes]- Proof
+>
+>$E^Q[e^{-rT}S_T] = S_0$
+>$E^Q[e^{-rT}S_0e^{\mu T+X_T}] = S_0$
+>$e^{(\mu-r) T} \cdot e^{T\cdot \psi_X(-i)}] = 1$
+>$\mu-r +\psi_X(-i) = 0$
+>$\mu=r -\psi_X(-i)$
+>
+>because $E[e^{X_T}] = \phi_{X_T}(-i) = e^{T\cdot \psi_X(-i)}$
+
+
+## GBM
+$$
+	\mu=r -\frac{\sigma^2}{2}
+$$
+
+>[!notes]- Proof
+>
+>$E^Q[e^{-rT}S_T] = S_0$
+>$E^Q[e^{-rT}S_0e^{\mu T+\sigma W_T}] = S_0$
+>$e^{(\mu-r) T} \cdot E^Q[e^{\sigma W_T}] = 1$
+>$e^{(\mu-r) T} \cdot e^{\frac{\sigma^2}{2} T}] = 1$
+>$(\mu-r +\frac{\sigma^2}{2})=0$
+>$\mu=r -\frac{\sigma^2}{2}$
+
+
+
 # Diffusion
 
 ## Black & Scholes
@@ -14,20 +52,6 @@ $$
 # Jump 
 
 ## Finite activity
-Under $Q$, $E_0^Q[e^{-rT}S_T] = S_0$ which imply:
-$$
-	\mu=r -\frac{\sigma^2}{2}
-$$
-
->[!notes]- Proof
->
->$E_0^Q[e^{-rT}S_T] = S_0$
->$E_0^Q[e^{-rT}S_0e^{\mu T+\sigma W_T}] = S_0$
->$e^{(\mu-r) T} \cdot E_0^Q[e^{\sigma W_T}] = 1$
->$e^{(\mu-r) T} \cdot e^{\frac{\sigma^2}{2} T}] = 1$
->$(\mu-r +\frac{\sigma^2}{2})=0$
->$\mu=r -\frac{\sigma^2}{2}$
-
 ### Merton 
 Merton model the spot price as following the SDE:
 $$
