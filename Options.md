@@ -136,7 +136,6 @@ C(k) &= \max(1 - e^{k-rT},0) + \frac{1}{\pi} \int_{0}^{\infty} \mathrm{Re}\left(
 \end{align*}
 $$
 
-
 > [!code]- Code
 >```matlab
 >function [Price]=FFT_CM_Call_Kou(Strike,params,T,r,S0)
@@ -186,13 +185,20 @@ $$
 >V=drift_rn*1i*v+V(v);
 >```
 
+### Path dependant option
+*Barrier*
+Fourier in k / Fourier in b / Laplace in T -> 
+$$
+\frac{\phi_q^+(u+v-1) \phi_q^-(k-1) }{(iu+1)uv}
+$$
+Inverse Laplace in T / Inverse Fourier in k / Inverse Fourier in b 
 
-### Convolution
+## Convolution
 Allow to compute the price of complex option like Barrier. As convolution in Fourier space is a multiplication. We calculate the Fourier transform, multiply, then take the inverse.
 $$
 C = E[e^{-rT}\Phi(S_T) \cdot 1_{\{x<D\}}]
 $$
-Transform this into a convolution -> Fourier -> mul -> inverse Fourier
+Transform this into a convolution -> Fourier -> mul -> Inverse Fourier
 
 
 ## Partial Intregal Differential Equation (PIDE)
