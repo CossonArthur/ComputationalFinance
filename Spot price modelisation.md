@@ -156,10 +156,10 @@ for i=1:Ndates
             % sample positive jump sizes
             Y=0;
             if(Jp >0)
-                Y = icdf('Exp',rand(Jp,1), 1/lambdap);
+                Y = Y + sum(icdf('Exp',rand(Jp,1), 1/lambdap));
             end
             if(Jn>0)
-                Y = Y - icdf('Exp',rand(Jn,1), 1/lambdam);
+                Y = Y - sum(icdf('Exp',rand(Jn,1), 1/lambdam));
             end
             X(:,i+1) = X(:,i+1) + Y;
         end
@@ -228,7 +228,7 @@ dt=T/Ndates;
 X=zeros(Nsim,Ndates+1);
 temp=randn(Nsim,Ndates);
 tempNG=randn(Nsim,Ndates);
-dS = k * icdf('InverseGaussian', rand(Nsim, Ndates), dt/k,1);
+dS = icdf('InverseGaussian', rand(Nsim,Ndates),dt, dt^2/k)
 for i=1:Ndates
     X(:,i+1) = X(:,i) + drift*dt + sigma*sqrt(dt).*temp(:,i) + theta* dS(:,i) + sigmaNIG.*sqrt(dS(:,i)).*tempNG(:,i);
 end
