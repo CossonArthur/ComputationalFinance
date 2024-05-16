@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spot price modelisation.md",
+                "file": "Option pricing/European/Black & Scholes.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spot price modelisation.md",
+                "file": "Option pricing/European/Black & Scholes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spot price modelisation.md",
+                "file": "Option pricing/European/Black & Scholes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spot price modelisation.md"
+                "file": "Option pricing/European/Black & Scholes.md"
               }
             }
           },
@@ -141,12 +141,12 @@
   },
   "active": "d946cdad26aebc57",
   "lastOpenFiles": [
+    "American Option pricing.md",
     "Probability theory.md",
     "Options.md",
+    "Spot price modelisation.md",
     "Calibration.md",
     "Option pricing/European/Black & Scholes.md",
-    "Spot price modelisation.md",
-    "American Option pricing.md",
     "Images",
     "Images/Pasted image 20240101195659.png",
     "Black & Scholes.md",
